@@ -113,16 +113,10 @@ export function heroView(data, lang) {
   const ui = UI[lang];
   const lab = data.site.lab || {};
   const rows = cohortRows(data.people, lang);
-  let tick = 0;
 
   const strip = rows.map((row) => `
     <div class="cohort__row">
       <span class="cohort__label">${esc(row.label)}</span>
-      <span class="cohort__ticks" aria-hidden="true">${
-        Array.from({ length: row.count }, () =>
-          `<i class="tick" style="animation-delay:${(tick++ * 22)}ms"></i>`
-        ).join("")
-      }</span>
       <span class="cohort__count">${esc(row.countLabel)}</span>
     </div>`).join("");
 
