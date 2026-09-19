@@ -140,6 +140,27 @@ years, what they worked on and where they went:
 }
 ```
 
+Someone who stayed through several stages — a master's, then a doctorate, then
+a postdoc — is one person with one row. Give them `stages` instead of a single
+`degree` and date range:
+
+```jsonc
+{
+  "name": { "zh": "黃寗琪", "en": "Ning-Chi Huang" },
+  "stages": [
+    { "degree": { "zh": "碩士", "en": "MS" } },
+    { "degree": { "zh": "博士", "en": "PhD" }, "since": 2017, "year": 2021 },
+    { "degree": { "zh": "博士後", "en": "Postdoc" } }
+  ],
+  "now": { "org": { "zh": "成大電機", "en": "NCKU EE" },
+           "role": { "zh": "助理教授", "en": "Assistant professor" } }
+}
+```
+
+The 學位 column prints 碩士 → 博士 → 博士後, and the years column spans from the
+earliest start to the latest end. A stage may omit its years; the validator
+warns so the gap is visible rather than forgotten.
+
 `degree`, `year` and `now` may all be missing. A roster kept for ten years has
 gaps, so the validator warns instead of failing, and rows with no year sort
 last. Someone who did a master's here and stayed on for a PhD appears in both
@@ -236,8 +257,10 @@ npm run check
 git diff content/people.json     # read this before committing
 ```
 
-The importer rewrites `people.json` from the two sheets and preserves the
-English names and author aliases that the spreadsheet does not carry.
+The importer rewrites `people.json` from the two sheets and preserves what the
+spreadsheet does not carry: English names, author aliases, `stages`, and a job
+title typed in by hand (kept only while the organisation stays the same — if
+someone moves, the new destination wins).
 Undergraduates are not in the spreadsheet either, so add them to `people.json`
 by hand — the importer leaves that group untouched.
 

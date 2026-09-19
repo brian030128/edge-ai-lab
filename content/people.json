@@ -970,12 +970,6 @@
         "zh": "黃寗琪",
         "en": "Ning-Chi Huang"
       },
-      "degree": {
-        "zh": "博士",
-        "en": "PhD"
-      },
-      "since": 2017,
-      "year": 2021,
       "research": "AI computing platform design, variable-latency design convergence (analysis and optimization)",
       "focus": [
         "Approximate computing",
@@ -993,6 +987,28 @@
       },
       "aliases": [
         "NC Huang"
+      ],
+      "stages": [
+        {
+          "degree": {
+            "zh": "碩士",
+            "en": "MS"
+          }
+        },
+        {
+          "degree": {
+            "zh": "博士",
+            "en": "PhD"
+          },
+          "since": 2017,
+          "year": 2021
+        },
+        {
+          "degree": {
+            "zh": "博士後",
+            "en": "Postdoc"
+          }
+        }
       ]
     },
     {

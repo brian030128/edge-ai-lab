@@ -170,13 +170,32 @@ if (people) {
       ids.add(a.id);
     }
     checkLocalised(f, `${at}.name`, a.name);
+    const stages = arr(a.stages);
     checkLocalised(f, `${at}.degree`, a.degree, { required: false });
-    if (!a.degree) warn(f, `${at}.degree`, "no degree recorded");
+    if (!a.degree && !stages.length) warn(f, `${at}.degree`, "no degree recorded");
+    if (a.degree && stages.length) {
+      warn(f, `${at}.degree`, "ignored because this entry has stages");
+    }
     for (const key of ["year", "since"]) {
       if (a[key] == null || a[key] === "") continue;
       if (!/^\d{4}$/.test(String(a[key]))) fail(f, `${at}.${key}`, "must be a four-digit year");
     }
-    if (a.year == null) warn(f, `${at}.year`, "no year recorded, this row sorts last");
+    // Someone who did a master's, a doctorate and a postdoc here is one person
+    // with three stages, not three rows.
+    stages.forEach((st, si) => {
+      checkLocalised(f, `${at}.stages[${si}].degree`, st.degree);
+      for (const key of ["since", "year"]) {
+        if (st[key] == null || st[key] === "") continue;
+        if (!/^\d{4}$/.test(String(st[key]))) fail(f, `${at}.stages[${si}].${key}`, "must be a four-digit year");
+      }
+      if (st.since && st.year && Number(st.year) < Number(st.since)) {
+        fail(f, `${at}.stages[${si}]`, `ends (${st.year}) before it starts (${st.since})`);
+      }
+      if (!st.since && !st.year) warn(f, `${at}.stages[${si}]`, "has no years");
+    });
+    if (a.year == null && !stages.some((st) => st.year)) {
+      warn(f, `${at}.year`, "no year recorded, this row sorts last");
+    }
     checkLocalised(f, `${at}.research`, a.research, { required: false });
     checkAliases(f, `${at}.aliases`, a.aliases, a.id || at);
     if (!a.now?.org) warn(f, `${at}.now.org`, "no current organisation — the Now column will be blank");

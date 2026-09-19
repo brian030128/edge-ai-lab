@@ -100,7 +100,8 @@ def destination(v):
 
 
 def previous_extras():
-    """Keep the English names and aliases that were added by hand."""
+    """Keep what the spreadsheet does not carry: English names, author aliases,
+    and the stages of anyone who passed through the lab more than once."""
     if not OUT.exists():
         return {}
     old = json.loads(OUT.read_text(encoding="utf-8"))
@@ -108,15 +109,20 @@ def previous_extras():
     def take(p):
         name = p.get("name")
         zh = name if isinstance(name, str) else (name or {}).get("zh", "")
-        if not zh or not (isinstance(name, dict) or p.get("aliases")):
+        role = (p.get("now") or {}).get("role")
+        if not zh or not (isinstance(name, dict) or p.get("aliases") or p.get("stages") or role):
             return
-        kept = extras.setdefault(zh, {"name": name, "aliases": None})
+        kept = extras.setdefault(zh, {"name": name, "aliases": None, "stages": None, "now": None})
         if isinstance(name, dict):
             kept["name"] = name
         # Someone can appear twice (a master's alumnus who stayed for a PhD).
         # Aliases belong to one record only, or author highlighting is ambiguous.
         if p.get("aliases") and not kept["aliases"]:
             kept["aliases"] = p["aliases"]
+        if p.get("stages") and not kept["stages"]:
+            kept["stages"] = p["stages"]
+        if role and not kept["now"]:
+            kept["now"] = p["now"]
     for g in old.get("groups", []):
         for m in g.get("members", []):
             take(m)
@@ -133,6 +139,21 @@ def restore(entry, extras):
     entry["name"] = kept["name"]
     if kept.get("aliases"):
         entry["aliases"] = kept.pop("aliases")  # first record to ask keeps them
+    if kept.get("stages"):
+        # Stages replace the single degree and date range the sheet provides.
+        entry["stages"] = kept["stages"]
+        for gone in ("degree", "since", "year"):
+            entry.pop(gone, None)
+
+    # The spreadsheet records where someone went, but not what they do there.
+    # Keep a job title that was filled in by hand, unless they have since moved.
+    old_now = kept.get("now") or {}
+    new_now = entry.get("now") or {}
+    same_org = json.dumps(old_now.get("org"), sort_keys=True, ensure_ascii=False) ==                json.dumps(new_now.get("org"), sort_keys=True, ensure_ascii=False)
+    if old_now.get("role") and new_now and same_org:
+        new_now["role"] = old_now["role"]
+        if old_now.get("href") and not new_now.get("href"):
+            new_now["href"] = old_now["href"]
 
 
 def main():

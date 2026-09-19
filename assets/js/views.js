@@ -440,11 +440,28 @@ function personRow(m, lang, data) {
 function alumniTable(alumni, lang) {
   const ui = UI[lang];
   // Most recent first; anyone whose years were never recorded sorts last.
-  const rows = [...alumni].sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
+  const left = (p) => Math.max(
+    Number(p.year) || 0,
+    ...list(p.stages).map((s) => Number(s.year) || 0)
+  );
+  const rows = [...alumni].sort((a, b) => left(b) - left(a));
+
+  // Someone may pass through the lab more than once — a master's, then a
+  // doctorate, then a postdoc. `stages` keeps that as one person, one row.
+  const spans = (a) => (list(a.stages).length ? list(a.stages) : [a]);
+
+  const degrees = (a) => spans(a)
+    .map((s) => t(s.degree, lang))
+    .filter(Boolean)
+    .join(" → ");
 
   const years = (a) => {
-    if (a.since && a.year) return `${a.since}–${a.year}`;
-    return String(a.year || a.since || "");
+    const starts = spans(a).map((s) => Number(s.since)).filter(Boolean);
+    const ends = spans(a).map((s) => Number(s.year)).filter(Boolean);
+    const from = starts.length ? Math.min(...starts) : null;
+    const to = ends.length ? Math.max(...ends) : null;
+    if (from && to) return from === to ? String(from) : `${from}–${to}`;
+    return String(to || from || "");
   };
 
   return `
@@ -470,7 +487,7 @@ function alumniTable(alumni, lang) {
           <td class="col-name" data-label="${esc(ui.colName)}">${esc(t(a.name, lang))}${
             alt(a.name, lang) ? `<span>${esc(alt(a.name, lang))}</span>` : ""
           }</td>
-          <td class="col-degree" data-label="${esc(ui.colDegree)}">${esc(t(a.degree, lang))}</td>
+          <td class="col-degree" data-label="${esc(ui.colDegree)}">${esc(degrees(a))}</td>
           <td class="col-year" data-label="${esc(ui.colYear)}">${esc(years(a))}</td>
           <td class="col-research" data-label="${esc(ui.colResearch)}">${esc(t(a.research, lang))}${
             list(a.focus).length
