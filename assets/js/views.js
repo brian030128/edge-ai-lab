@@ -119,8 +119,8 @@ export function heroView(data, lang) {
     <div class="cohort__row">
       <span class="cohort__label">${esc(row.label)}</span>
       <span class="cohort__ticks" aria-hidden="true">${
-        row.marks.map((past) =>
-          `<i class="tick${past ? " tick--past" : ""}" style="animation-delay:${(tick++ * 22)}ms"></i>`
+        Array.from({ length: row.count }, () =>
+          `<i class="tick" style="animation-delay:${(tick++ * 22)}ms"></i>`
         ).join("")
       }</span>
       <span class="cohort__count">${esc(row.countLabel)}</span>
@@ -151,7 +151,7 @@ function cohortRows(people, lang) {
     if (!members.length) continue;
     rows.push({
       label: t(group.label, lang),
-      marks: members.map(() => false),
+      count: members.length,
       countLabel: UI[lang].people_n(members.length),
     });
   }
@@ -159,7 +159,7 @@ function cohortRows(people, lang) {
   if (alumni.length) {
     rows.push({
       label: UI[lang].alumni,
-      marks: alumni.map(() => true),
+      count: alumni.length,
       countLabel: UI[lang].people_n(alumni.length),
     });
   }
