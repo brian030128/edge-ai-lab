@@ -985,6 +985,10 @@
         "org": {
           "zh": "成大電機",
           "en": "NCKU EE"
+        },
+        "role": {
+          "zh": "助理教授",
+          "en": "Assistant professor"
         }
       },
       "aliases": [

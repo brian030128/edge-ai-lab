@@ -1,6 +1,75 @@
 {
   "items": [
     {
+      "id": "speculate-deep-neurips26",
+      "year": 2026,
+      "type": "conference",
+      "title": "Speculate Deep and Accurate: Lossless and Training-Free Acceleration for Offloaded LLMs via Substitute Speculative Decoding",
+      "authors": [
+        "Pei-Shuo Wang",
+        "Jian-Jia Chen",
+        "Chun-Che Yang",
+        "Chi-Chih Chang",
+        "Ning-Chi Huang",
+        "Mohamed Abdelfattah",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "Advances in Neural Information Processing Systems (NeurIPS) 38, 54334–54357",
+      "themes": [
+        "llm"
+      ],
+      "links": []
+    },
+    {
+      "id": "dustin-2026",
+      "year": 2026,
+      "type": "conference",
+      "title": "Dustin: Draft-Augmented Sparse Verification for Efficient Long-Context Generation with Speculative Decoding",
+      "authors": [
+        "Wen-Hung Lee",
+        "Jian-Jia Chen",
+        "Xiaolin Lin",
+        "Pei-Shuo Wang",
+        "Chi-Chih Chang",
+        "Chun-Che Yang",
+        "Ning-Chi Huang",
+        "Grace Li Zhang",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "International Conference on Machine Learning (ICML) 2026",
+      "themes": [
+        "llm"
+      ],
+      "links": [
+        {
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2606.24957"
+        }
+      ]
+    },
+    {
+      "id": "shadowspec",
+      "type": "workshop",
+      "title": "ShadowSpec: Towards Zero Speculation Overhead for Substitute Speculative Decoding",
+      "authors": [
+        "Kuan-Cheng Lin",
+        "Pei-Shuo Wang",
+        "Jian-Jia Chen",
+        "Chun-Che Yang",
+        "Chi-Chih Chang",
+        "Brian J. Chan",
+        "Ning-Chi Huang",
+        "Mohamed S. Abdelfattah",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "AdaptFM Workshop, International Conference on Machine Learning (ICML) 2026",
+      "themes": [
+        "llm"
+      ],
+      "links": [],
+      "year": 2026
+    },
+    {
       "id": "palu-iclr25",
       "year": 2025,
       "type": "conference",
@@ -28,75 +97,6 @@
           "href": "https://arxiv.org/abs/2407.21118"
         }
       ]
-    },
-    {
-      "id": "speculate-deep-neurips26",
-      "year": 2026,
-      "type": "conference",
-      "title": "Speculate Deep and Accurate: Lossless and Training-Free Acceleration for Offloaded LLMs via Substitute Speculative Decoding",
-      "authors": [
-        "Pei-Shuo Wang",
-        "Jian-Jia Chen",
-        "Chun-Che Yang",
-        "Chi-Chih Chang",
-        "Ning-Chi Huang",
-        "Mohamed Abdelfattah",
-        "Kai-Chiang Wu"
-      ],
-      "venue": "Advances in Neural Information Processing Systems (NeurIPS) 38, 54334–54357",
-      "themes": [
-        "llm"
-      ],
-      "links": []
-    },
-    {
-      "id": "dustin-2026",
-      "year": 2026,
-      "type": "preprint",
-      "title": "Dustin: Draft-Augmented Sparse Verification for Efficient Long-Context Generation with Speculative Decoding",
-      "authors": [
-        "Wen-Hung Lee",
-        "Jian-Jia Chen",
-        "Xiaolin Lin",
-        "Pei-Shuo Wang",
-        "Chi-Chih Chang",
-        "Chun-Che Yang",
-        "Ning-Chi Huang",
-        "Grace Li Zhang",
-        "Kai-Chiang Wu"
-      ],
-      "venue": "arXiv preprint arXiv:2606.24957",
-      "themes": [
-        "llm"
-      ],
-      "links": [
-        {
-          "label": "arXiv",
-          "href": "https://arxiv.org/abs/2606.24957"
-        }
-      ]
-    },
-    {
-      "id": "shadowspec",
-      "status": "toappear",
-      "type": "workshop",
-      "title": "ShadowSpec: Towards Zero Speculation Overhead for Substitute Speculative Decoding",
-      "authors": [
-        "Kuan-Cheng Lin",
-        "Pei-Shuo Wang",
-        "Jian-Jia Chen",
-        "Chun-Che Yang",
-        "Chi-Chih Chang",
-        "Brian J. Chan",
-        "Ning-Chi Huang",
-        "Mohamed S. Abdelfattah",
-        "Kai-Chiang Wu"
-      ],
-      "venue": "AdaptFM: Resource-Adaptive Foundation Model Inference",
-      "themes": [
-        "llm"
-      ],
-      "links": []
     },
     {
       "id": "systolic-sparse-fpga25",
@@ -241,21 +241,6 @@
         "Kai-Chiang Wu"
       ],
       "venue": "Design, Automation and Test in Europe (DATE) 2019, 692–697",
-      "themes": [
-        "accel"
-      ],
-      "links": []
-    },
-    {
-      "id": "decomposable-mac-systolic",
-      "status": "manuscript",
-      "type": "manuscript",
-      "title": "Efficient Systolic Array Based on Decomposable MAC for Quantized Deep Neural Networks",
-      "authors": [
-        "Ning-Chi Huang",
-        "Huan-Jan Chou",
-        "Kai-Chiang Wu"
-      ],
       "themes": [
         "accel"
       ],
