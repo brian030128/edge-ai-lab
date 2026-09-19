@@ -296,6 +296,12 @@ deliberate placeholder, not a missing image.
 
 ## Still to fill in
 
+- **Wording that is not the lab's own.** The research statement in
+  `lab.statement`, the PI's bio and the theme summaries were drafted from the
+  publication list, not quoted from anyone. They are accurate about the topics
+  but they are not the PI's words; he should read and rewrite them. The
+  openings text says only what can be verified — if the lab has an actual
+  procedure for 大學部專題 (length, what to send, when to apply), put it there.
 - `content/site.json` — the lab email, the PI's email, office and room number,
   and links for the PI (department profile, Scholar). Empty fields are hidden
   rather than printed blank, so the contact list stays tidy meanwhile.

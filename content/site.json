@@ -61,12 +61,12 @@
       "zh": [
         "吳凱強的研究處理同一個落差：模型的能力成長得比硬體快。實驗室的工作是把這個落差拆成可以動手的問題——一個 KV-Cache 到底需要多少記憶體、一次解碼能不能少跑幾層、加速器上的稀疏結構要長成什麼樣子，硬體才真的省得到時間。",
         "近年的主軸是大型語言模型的推論效率：以低秩投影壓縮 KV-Cache（Palu, ICLR 2025）、以替代草稿模型加速 offloaded 推論的推測解碼（NeurIPS 2026），以及視覺模型的逐層 N:M 稀疏與低秩架構搜尋（ELSA、FLORA）。這條線延續實驗室較早的硬體路線：可分解 MAC 的收縮陣列、FPGA 上的稀疏張量單元，以及加速器的容錯設計。",
-        "實驗室與康乃爾大學、德州大學奧斯汀分校等研究群合作。畢業生多進入台灣半導體與 EDA 產業，也有人繼續攻讀博士。指導的原則很簡單：先讓量測可信，再談最佳化。"
+        "實驗室與康乃爾大學、德州大學奧斯汀分校等研究群合作。畢業生多進入台灣半導體與 EDA 產業，也有人繼續攻讀博士。"
       ],
       "en": [
         "Kai-Chiang Wu's work addresses one gap: models grow more capable faster than hardware grows able to run them. The lab breaks that gap into things you can act on — how much memory a KV-cache really needs, whether a decoding step can skip layers, and which sparsity structures let an accelerator save time rather than only save parameters.",
         "The current focus is inference efficiency for large language models: compressing the KV-cache with low-rank projection (Palu, ICLR 2025), speculative decoding with substitute drafters for offloaded inference (NeurIPS 2026), and layer-wise N:M sparsity and low-rank architecture search for vision models (ELSA, FLORA). It continues the lab's longer line of hardware work: systolic arrays built on decomposable MACs, sparse tensor units for FPGAs, and fault mitigation for accelerators.",
-        "The lab collaborates with groups at Cornell and UT Austin. Graduates go mostly into Taiwan's semiconductor and EDA industry, and several have continued to doctoral study abroad. The advising principle is simple: make the measurement trustworthy before arguing about the optimisation."
+        "The lab collaborates with groups at Cornell and UT Austin. Graduates go mostly into Taiwan's semiconductor and EDA industry, and several have continued to doctoral study abroad."
       ]
     },
     "interests": [
@@ -161,12 +161,12 @@
   "join": {
     "body": {
       "zh": [
-        "實驗室每年招收博士班、碩士班與大學部專題生。我們不要求你進來時就懂 CUDA 或硬體設計，但期待你願意把一個現象追到底——包含那些最後發現是量測腳本寫錯的夜晚。",
-        "大學部專題以一年為一期，從一個可重現的量測開始；做得順的同學通常會延續成碩士論文題目。有興趣請寄信給主持人，附上成績單，以及一段你曾經除錯最久的經驗。"
+        "實驗室招收博士班、碩士班與大學部專題生，研究方向涵蓋大型語言模型的推論效率、模型壓縮與 AI 加速器設計。",
+        "有興趣的同學請來信與主持人聯絡，並簡述你的背景與想投入的方向。"
       ],
       "en": [
-        "The lab takes doctoral students, master's students and undergraduate project students every year. You do not need to arrive knowing CUDA or hardware design, but you should be willing to chase one phenomenon to the bottom — including the nights where the answer turns out to be a bug in the measurement script.",
-        "Undergraduate projects run for a year and start from a reproducible measurement; students who take to it usually continue the topic as a master's thesis. Write to the PI with a transcript and a paragraph about the longest you have ever spent debugging something."
+        "The lab takes doctoral students, master's students and undergraduate project students. The work spans inference efficiency for large language models, model compression and AI accelerator design.",
+        "If you are interested, write to the PI with a short description of your background and the direction you would like to work in."
       ]
     },
     "cta": [
