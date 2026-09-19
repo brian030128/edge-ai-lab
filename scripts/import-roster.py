@@ -179,13 +179,12 @@ def main():
         "groups": [
             {"id": "phd", "label": {"zh": "博士班", "en": "Doctoral students"}, "members": phd},
             {"id": "masters", "label": {"zh": "碩士班", "en": "Master's students"}, "members": masters},
-            {"id": "undergrad", "label": {"zh": "大學部專題生", "en": "Undergraduate researchers"}, "members": []},
         ],
         "alumni": alumni,
     }
     OUT.write_text(json.dumps(people, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {OUT.relative_to(ROOT)} — {len(phd)} PhD, {len(masters)} master's, {len(alumni)} alumni.")
-    print("Undergraduates are kept in people.json by hand; the spreadsheet has no column for them.")
+    print("Groups that are not in the spreadsheet must be re-added to people.json by hand.")
 
 
 if __name__ == "__main__":

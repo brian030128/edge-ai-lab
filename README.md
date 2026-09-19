@@ -110,10 +110,14 @@ unique — blog posts credit their author by it.
 }
 ```
 
-Groups are whatever you put in the file: 博士班, 碩士班 and 大學部專題生. Rename
-them, reorder them or add one; the hero strip, the counts and the roster all
-follow the file. An empty group is hidden, so 大學部專題生 sits there waiting for
-the next 專題生 without showing an empty heading.
+Groups are whatever you put in the file — 博士班 and 碩士班 at the moment.
+Rename them, reorder them or add one, and the hero strip, the counts and the
+roster all follow. A group with no members is hidden rather than printed empty,
+so adding 大學部專題生 back is one entry whenever there is a 專題生 to put in it.
+
+`import-roster.py` only writes the groups the spreadsheet has, so a group added
+by hand has to be re-added after an import. Read `git diff` before committing
+an import for exactly this reason.
 
 Aliases matter because publication lists print initials. Giving 陳建嘉 the alias
 "JJ Chen" is what sets that name in bold in the publications section. An alias

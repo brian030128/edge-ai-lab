@@ -238,14 +238,6 @@
           "links": []
         }
       ]
-    },
-    {
-      "id": "undergrad",
-      "label": {
-        "zh": "大學部專題生",
-        "en": "Undergraduate researchers"
-      },
-      "members": []
     }
   ],
   "alumni": [
