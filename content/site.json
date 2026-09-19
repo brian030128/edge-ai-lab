@@ -1,0 +1,122 @@
+{
+  "lab": {
+    "short": "EISL",
+    "name": {
+      "zh": "邊緣智慧系統實驗室",
+      "en": "Edge Intelligence Systems Lab"
+    },
+    "institution": {
+      "zh": "國立範例大學　資訊工程學系",
+      "en": "Department of Computer Science, Example University"
+    },
+    "statement": {
+      "zh": "我們研究機器學習模型離開資料中心之後會發生什麼事。從編譯器、排程器到量測方法，把模型放到手機、車機與工廠設備上時壞掉的每一層，我們都拆開來看。",
+      "en": "We study what happens to machine learning models after they leave the data centre. Compilers, schedulers, measurement — we take apart every layer that breaks when a model has to run on a phone, a vehicle, or a factory sensor."
+    },
+    "contact": {
+      "email": "eisl@example.edu.tw",
+      "phone": "+886 2 0000 0000 #1234",
+      "office": {
+        "zh": "資訊工程館 7 樓 705 室",
+        "en": "Room 705, CS Building"
+      },
+      "address": {
+        "zh": "臺北市範例區範例路 1 號",
+        "en": "No. 1, Example Rd., Taipei, Taiwan"
+      }
+    },
+    "links": [
+      { "label": { "zh": "GitHub", "en": "GitHub" }, "href": "https://github.com/example-lab", "text": "example-lab" },
+      { "label": { "zh": "系所網頁", "en": "Department" }, "href": "https://cs.example.edu.tw", "text": "cs.example.edu.tw" }
+    ]
+  },
+
+  "pi": {
+    "id": "pi",
+    "name": { "zh": "林彥廷", "en": "Yen-Ting Lin" },
+    "title": { "zh": "教授　實驗室主持人", "en": "Professor and principal investigator" },
+    "photo": "",
+    "email": "ytlin@example.edu.tw",
+    "office": { "zh": "資訊工程館 703 室", "en": "Room 703, CS Building" },
+    "links": [
+      { "label": { "zh": "Google Scholar", "en": "Google Scholar" }, "href": "https://scholar.google.com/citations?user=EXAMPLE", "text": "scholar.google.com" },
+      { "label": { "zh": "個人網頁", "en": "Homepage" }, "href": "https://example.edu.tw/~ytlin", "text": "example.edu.tw/~ytlin" }
+    ],
+    "bio": {
+      "zh": [
+        "林彥廷的研究從一個反覆出現的落差開始：論文裡的模型在 A100 上跑得漂亮，搬到量產裝置上卻慢了三十倍，而且沒有人說得清楚慢在哪一層。這個實驗室的工作，就是把那三十倍拆解成可以量測、可以修的東西。",
+        "研究方法偏向系統：先做出可重現的量測，再往上改編譯器與排程器，最後才談演算法。實驗室與國內半導體與車用電子廠商長期合作，學生做的題目通常有一台真的機器在等著跑。",
+        "教授大學部「計算機結構」與研究所「邊緣機器學習系統」。指導學生時的原則很簡單：先讓東西會動，再讓它有道理，最後才讓它變快。"
+      ],
+      "en": [
+        "Yen-Ting Lin's work starts from a gap that keeps reappearing: a model that looks excellent on an A100 runs thirty times slower on the device that ships, and nobody can say which layer ate the time. This lab's job is to break that factor of thirty into things you can measure and then fix.",
+        "The approach is a systems one — build a reproducible measurement first, then change the compiler and the scheduler, and only then argue about the algorithm. The lab works with semiconductor and automotive electronics partners in Taiwan, so student projects usually have real hardware waiting for them.",
+        "Teaches Computer Architecture to undergraduates and Edge Machine Learning Systems to graduate students. The advising rule is simple: make it work, make it make sense, then make it fast."
+      ]
+    },
+    "interests": [
+      { "zh": "邊緣推論編譯器", "en": "Compilers for edge inference" },
+      { "zh": "異質硬體排程", "en": "Heterogeneous scheduling" },
+      { "zh": "系統效能量測", "en": "Performance measurement" },
+      { "zh": "裝置端隱私學習", "en": "On-device private learning" },
+      { "zh": "車用即時系統", "en": "Automotive real-time systems" }
+    ],
+    "education": [
+      { "year": "2016", "detail": { "zh": "博士，資訊工程，國立範例大學", "en": "PhD in Computer Science, Example University" } },
+      { "year": "2016–2019", "detail": { "zh": "研究科學家，某半導體公司編譯器團隊", "en": "Research scientist, compiler team at a semiconductor company" } },
+      { "year": "2019–2024", "detail": { "zh": "助理教授，國立範例大學資訊工程學系", "en": "Assistant professor, Department of Computer Science, Example University" } },
+      { "year": "2024–", "detail": { "zh": "教授，國立範例大學資訊工程學系", "en": "Professor, Department of Computer Science, Example University" } }
+    ]
+  },
+
+  "themes": [
+    {
+      "id": "compile",
+      "name": { "zh": "邊緣編譯與部署", "en": "Compiling for the edge" },
+      "summary": {
+        "zh": "把訓練好的模型翻譯成特定晶片真的跑得動的程式：算子融合、量化誤差的追蹤，以及在記憶體只有幾百 KB 時的取捨。",
+        "en": "Turning a trained model into code a specific chip can actually run: operator fusion, tracking where quantisation error accumulates, and the trade-offs when there are only a few hundred kilobytes of memory."
+      }
+    },
+    {
+      "id": "sched",
+      "name": { "zh": "異質資源排程", "en": "Scheduling heterogeneous hardware" },
+      "summary": {
+        "zh": "一顆 SoC 上同時有 CPU、GPU 與 NPU，工作該切給誰、什麼時候切，在延遲上限與功耗預算之間找可證明的答案。",
+        "en": "One SoC carries a CPU, a GPU and an NPU. Which unit gets the work, and when — with provable answers under a latency bound and a power budget."
+      }
+    },
+    {
+      "id": "measure",
+      "name": { "zh": "量測與基準方法", "en": "Measurement and benchmarks" },
+      "summary": {
+        "zh": "先把數字量對。我們維護一組開源的邊緣推論基準，重點放在可重現性：同一份實驗，換一台機器仍該得到同樣的結論。",
+        "en": "Get the numbers right first. We maintain an open benchmark suite for edge inference built around reproducibility: the same experiment on another machine should still support the same conclusion."
+      }
+    },
+    {
+      "id": "privacy",
+      "name": { "zh": "裝置端隱私學習", "en": "On-device private learning" },
+      "summary": {
+        "zh": "資料不離開裝置的前提下做模型更新，並量化「不離開」在系統層面上真正的成本：電池、頻寬與延遲。",
+        "en": "Updating models without data leaving the device, and quantifying what 'without leaving' actually costs at the system level: battery, bandwidth, latency."
+      }
+    }
+  ],
+
+  "join": {
+    "body": {
+      "zh": [
+        "實驗室長期招收博士班、碩士班與大學部專題生。我們不要求你進來時就會編譯器或核心程式，但期待你願意把一個現象追到底——包含那些最後發現是量測腳本寫錯的夜晚。",
+        "大學部專題以一年為一期，從一個可重現的量測開始；表現合適的同學通常會延續成碩士論文題目。有興趣請寄信給主持人，附上成績單與一段你曾經除錯最久的經驗。"
+      ],
+      "en": [
+        "The lab takes doctoral students, master's students and undergraduate project students every year. You do not need to arrive knowing compilers or kernel code, but you should be willing to chase one phenomenon to the bottom — including the nights where the answer turns out to be a bug in the measurement script.",
+        "Undergraduate projects run for one year and start from a reproducible measurement; students who take to it usually continue the topic as a master's thesis. Write to the PI with a transcript and a paragraph about the longest you have ever spent debugging something."
+      ]
+    },
+    "cta": [
+      { "label": { "zh": "寄信給主持人", "en": "Email the PI" }, "href": "mailto:ytlin@example.edu.tw" }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "lab-page",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Lab website. Every page is rendered from the content files in this repository.",
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "check": "node scripts/check-content.mjs",
+    "blog:index": "node scripts/build-blog-index.mjs",
+    "blog:check": "node scripts/build-blog-index.mjs --check",
+    "verify": "npm run check && npm run blog:check"
+  },
+  "engines": { "node": ">=18" }
+}

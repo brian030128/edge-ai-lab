@@ -1,0 +1,273 @@
+{
+  "groups": [
+    {
+      "id": "postdoc",
+      "label": { "zh": "博士後研究員", "en": "Postdoctoral researchers" },
+      "members": [
+        {
+          "id": "wei-chen-hsu",
+          "name": { "zh": "許維宸", "en": "Wei-Chen Hsu" },
+          "role": { "zh": "博士後研究員　2025 年起", "en": "Postdoctoral researcher, since 2025" },
+          "focus": [
+            { "zh": "編譯器後端", "en": "Compiler backends" },
+            { "zh": "算子融合", "en": "Operator fusion" },
+            { "zh": "MLIR" , "en": "MLIR" }
+          ],
+          "work": {
+            "zh": "負責實驗室編譯器工具鏈的維護，目前在做跨算子的記憶體重用分析，讓小型 NPU 不必把中間張量寫回 DRAM。",
+            "en": "Maintains the lab's compiler toolchain. Currently working on cross-operator memory reuse analysis so small NPUs never have to spill intermediate tensors to DRAM."
+          },
+          "email": "wchsu@example.edu.tw",
+          "links": [{ "label": "GitHub", "href": "https://github.com/example-lab" }]
+        }
+      ]
+    },
+    {
+      "id": "phd",
+      "label": { "zh": "博士班", "en": "Doctoral students" },
+      "members": [
+        {
+          "id": "pin-hsuan-chen",
+          "name": { "zh": "陳品瑄", "en": "Pin-Hsuan Chen" },
+          "role": { "zh": "博士班四年級", "en": "Fourth-year PhD student" },
+          "focus": [
+            { "zh": "量化誤差分析", "en": "Quantisation error analysis" },
+            { "zh": "低位元推論", "en": "Low-bit inference" }
+          ],
+          "work": {
+            "zh": "研究量化誤差如何在深層網路中累積，並提出以逐層誤差預算取代統一位元寬度的配置方法。2026 年 ASPLOS 最佳論文。",
+            "en": "Studies how quantisation error accumulates through a deep network, and replaces uniform bit widths with a per-layer error budget. Best paper at ASPLOS 2026."
+          },
+          "email": "phchen@example.edu.tw",
+          "links": [{ "label": { "zh": "個人網頁", "en": "Homepage" }, "href": "https://example.edu.tw/~phchen" }]
+        },
+        {
+          "id": "che-wei-tang",
+          "name": { "zh": "湯哲維", "en": "Che-Wei Tang" },
+          "role": { "zh": "博士班三年級", "en": "Third-year PhD student" },
+          "focus": [
+            { "zh": "即時排程", "en": "Real-time scheduling" },
+            { "zh": "車用系統", "en": "Automotive systems" },
+            { "zh": "延遲上限證明", "en": "Latency bounds" }
+          ],
+          "work": {
+            "zh": "在車用 SoC 上做多模型共存的排程，證明在最壞情況下仍能滿足感知管線的截止時間。與國內車用電子廠商合作。",
+            "en": "Schedules co-resident models on automotive SoCs and proves worst-case deadlines still hold for the perception pipeline. Works with an automotive electronics partner."
+          },
+          "email": "cwtang@example.edu.tw",
+          "links": []
+        },
+        {
+          "id": "yu-hsin-kuo",
+          "name": { "zh": "郭宇昕", "en": "Yu-Hsin Kuo" },
+          "role": { "zh": "博士班一年級", "en": "First-year PhD student" },
+          "focus": [
+            { "zh": "聯邦學習", "en": "Federated learning" },
+            { "zh": "差分隱私", "en": "Differential privacy" },
+            { "zh": "能耗量測", "en": "Energy measurement" }
+          ],
+          "work": {
+            "zh": "量測裝置端訓練的真實能耗，並研究隱私預算與電池壽命之間的交換關係。碩士班同樣在本實驗室完成。",
+            "en": "Measures what on-device training actually costs in battery terms, and studies the exchange rate between privacy budget and device lifetime. Did a master's here as well."
+          },
+          "email": "yhkuo@example.edu.tw",
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "masters",
+      "label": { "zh": "碩士班", "en": "Master's students" },
+      "members": [
+        {
+          "id": "chia-ling-wu",
+          "name": { "zh": "吳佳玲", "en": "Chia-Ling Wu" },
+          "role": { "zh": "碩士班二年級", "en": "Second-year master's student" },
+          "focus": [
+            { "zh": "基準測試", "en": "Benchmarking" },
+            { "zh": "可重現性工具", "en": "Reproducibility tooling" }
+          ],
+          "work": {
+            "zh": "維護實驗室的開源量測套件 edgebench，處理不同裝置上時脈與溫度造成的量測漂移。",
+            "en": "Maintains edgebench, the lab's open measurement suite, and handles the clock and thermal drift that makes device numbers disagree."
+          },
+          "email": "clwu@example.edu.tw",
+          "links": [{ "label": "GitHub", "href": "https://github.com/example-lab" }]
+        },
+        {
+          "id": "kuan-ting-yeh",
+          "name": { "zh": "葉冠廷", "en": "Kuan-Ting Yeh" },
+          "role": { "zh": "碩士班二年級", "en": "Second-year master's student" },
+          "focus": [
+            { "zh": "NPU 核心最佳化", "en": "NPU kernel optimisation" },
+            { "zh": "記憶體階層", "en": "Memory hierarchy" }
+          ],
+          "work": {
+            "zh": "手寫與自動產生的卷積核心比較，目標是讓自動排程器產生的程式在特定 NPU 上追上人工調校的版本。",
+            "en": "Compares hand-written and generated convolution kernels, aiming to close the gap between an auto-scheduler's output and hand tuning on one NPU."
+          },
+          "email": "ktyeh@example.edu.tw",
+          "links": []
+        },
+        {
+          "id": "shu-fen-liao",
+          "name": { "zh": "廖淑芬", "en": "Shu-Fen Liao" },
+          "role": { "zh": "碩士班一年級", "en": "First-year master's student" },
+          "focus": [
+            { "zh": "模型壓縮", "en": "Model compression" },
+            { "zh": "結構化剪枝", "en": "Structured pruning" }
+          ],
+          "work": {
+            "zh": "研究剪枝後的稀疏結構要長成什麼樣子，硬體才真的省得到時間，而不只是參數量變少。",
+            "en": "Studies which sparsity structures a pruned model must land on for the hardware to actually save time, rather than only saving parameters."
+          },
+          "email": "sfliao@example.edu.tw",
+          "links": []
+        },
+        {
+          "id": "jui-hao-peng",
+          "name": { "zh": "彭睿豪", "en": "Jui-Hao Peng" },
+          "role": { "zh": "碩士班一年級", "en": "First-year master's student" },
+          "focus": [
+            { "zh": "工廠視覺檢測", "en": "Factory visual inspection" },
+            { "zh": "資料漂移", "en": "Data drift" }
+          ],
+          "work": {
+            "zh": "與產線合作，處理部署後的資料漂移：模型上線三個月後為什麼開始誤判，以及要多久重新校正一次。",
+            "en": "Works on a production line with post-deployment drift: why a model starts misjudging three months in, and how often it has to be recalibrated."
+          },
+          "email": "jhpeng@example.edu.tw",
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "undergrad",
+      "label": { "zh": "大學部專題生", "en": "Undergraduate researchers" },
+      "members": [
+        {
+          "id": "hsin-yu-lai",
+          "name": { "zh": "賴心妤", "en": "Hsin-Yu Lai" },
+          "role": { "zh": "大學部四年級　專題", "en": "Fourth-year undergraduate" },
+          "focus": [
+            { "zh": "量測自動化", "en": "Measurement automation" },
+            { "zh": "Python 工具", "en": "Python tooling" }
+          ],
+          "work": {
+            "zh": "把實驗室的測試流程接上 CI，讓每次提交都自動在三台裝置上重跑一次基準測試。",
+            "en": "Wired the lab's test flow into CI so every commit reruns the benchmark on three devices."
+          },
+          "links": []
+        },
+        {
+          "id": "tzu-chieh-hung",
+          "name": { "zh": "洪子傑", "en": "Tzu-Chieh Hung" },
+          "role": { "zh": "大學部四年級　專題", "en": "Fourth-year undergraduate" },
+          "focus": [
+            { "zh": "Android 部署", "en": "Android deployment" },
+            { "zh": "效能剖析", "en": "Profiling" }
+          ],
+          "work": {
+            "zh": "在中階手機上比較三種推論框架的實際延遲，整理成一份給實驗室內部參考的選型報告。",
+            "en": "Compares real latency across three inference runtimes on mid-range phones, written up as the lab's internal guide to picking one."
+          },
+          "links": []
+        },
+        {
+          "id": "yu-chen-fang",
+          "name": { "zh": "方宇辰", "en": "Yu-Chen Fang" },
+          "role": { "zh": "大學部三年級　專題", "en": "Third-year undergraduate" },
+          "focus": [
+            { "zh": "資料視覺化", "en": "Data visualisation" },
+            { "zh": "實驗紀錄", "en": "Experiment tracking" }
+          ],
+          "work": {
+            "zh": "做實驗室的結果看板，把散在各人筆電裡的實驗紀錄收成一個可以查詢的地方。",
+            "en": "Builds the lab's results dashboard, collecting experiment logs scattered across laptops into one place you can query."
+          },
+          "links": []
+        }
+      ]
+    }
+  ],
+
+  "alumni": [
+    {
+      "id": "cheng-hao-shih",
+      "name": { "zh": "施承澔", "en": "Cheng-Hao Shih" },
+      "degree": { "zh": "博士", "en": "PhD" },
+      "year": 2025,
+      "thesis": {
+        "zh": "邊緣推論的記憶體階層感知編譯",
+        "en": "Memory-hierarchy-aware compilation for edge inference"
+      },
+      "now": { "org": "MediaTek", "role": { "zh": "資深編譯器工程師", "en": "Senior compiler engineer" }, "href": "" }
+    },
+    {
+      "id": "yi-ting-chang",
+      "name": { "zh": "張怡庭", "en": "Yi-Ting Chang" },
+      "degree": { "zh": "博士", "en": "PhD" },
+      "year": 2023,
+      "thesis": {
+        "zh": "異質 SoC 上的即時推論排程",
+        "en": "Real-time inference scheduling on heterogeneous SoCs"
+      },
+      "now": { "org": "NVIDIA", "role": { "zh": "系統軟體工程師", "en": "System software engineer" }, "href": "" }
+    },
+    {
+      "id": "po-wei-chiu",
+      "name": { "zh": "邱柏維", "en": "Po-Wei Chiu" },
+      "degree": { "zh": "碩士", "en": "MS" },
+      "year": 2025,
+      "thesis": {
+        "zh": "低位元量化在語音模型上的誤差傳播",
+        "en": "Error propagation of low-bit quantisation in speech models"
+      },
+      "now": { "org": "TSMC", "role": { "zh": "研發替代役　資料科學", "en": "Data scientist" }, "href": "" }
+    },
+    {
+      "id": "meng-chun-liu",
+      "name": { "zh": "劉孟均", "en": "Meng-Chun Liu" },
+      "degree": { "zh": "碩士", "en": "MS" },
+      "year": 2024,
+      "thesis": {
+        "zh": "工廠檢測模型的線上校正流程",
+        "en": "Online recalibration for factory inspection models"
+      },
+      "now": { "org": "Appier", "role": { "zh": "機器學習工程師", "en": "Machine learning engineer" }, "href": "" }
+    },
+    {
+      "id": "shih-chi-huang",
+      "name": { "zh": "黃士奇", "en": "Shih-Chi Huang" },
+      "degree": { "zh": "碩士", "en": "MS" },
+      "year": 2024,
+      "thesis": {
+        "zh": "行動裝置上的聯邦學習能耗模型",
+        "en": "An energy model for federated learning on mobile devices"
+      },
+      "now": { "org": "Google", "role": { "zh": "軟體工程師", "en": "Software engineer" }, "href": "" }
+    },
+    {
+      "id": "an-chi-tsai",
+      "name": { "zh": "蔡安琪", "en": "An-Chi Tsai" },
+      "degree": { "zh": "學士", "en": "BS" },
+      "year": 2024,
+      "thesis": {
+        "zh": "大學部專題：邊緣裝置推論延遲量測工具",
+        "en": "Undergraduate project: a latency measurement tool for edge devices"
+      },
+      "now": { "org": { "zh": "卡內基美隆大學", "en": "Carnegie Mellon University" }, "role": { "zh": "碩士班就讀中", "en": "Master's student" }, "href": "" }
+    },
+    {
+      "id": "wen-hsuan-ko",
+      "name": { "zh": "柯玟璇", "en": "Wen-Hsuan Ko" },
+      "degree": { "zh": "學士", "en": "BS" },
+      "year": 2023,
+      "thesis": {
+        "zh": "大學部專題：模型壓縮對電池續航的影響",
+        "en": "Undergraduate project: how compression changes battery life"
+      },
+      "now": { "org": "Synology", "role": { "zh": "軟體工程師", "en": "Software engineer" }, "href": "" }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask the lab manager
+    url: mailto:eisl@example.edu.tw
+    about: Anything that is not a change to the website.

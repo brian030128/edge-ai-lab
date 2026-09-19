@@ -1,0 +1,66 @@
+{
+  "posts": [
+    {
+      "slug": "thermal-drift",
+      "date": "2026-08-14",
+      "title": {
+        "en": "Same binary, two identical phones, 40% apart",
+        "zh": "同一支程式，兩台同型號手機差了 40%"
+      },
+      "summary": {
+        "en": "It took three weeks to find out the problem was not the model. It was the desk lamp.",
+        "zh": "我們花了三週才發現，問題不在模型，而在桌上那盞燈。"
+      },
+      "file": {
+        "en": "2026-08-14-thermal-drift.en.md",
+        "zh": "2026-08-14-thermal-drift.zh.md"
+      },
+      "author": "chia-ling-wu",
+      "tags": [
+        "measurement",
+        "benchmarking",
+        "edgebench",
+        "量測",
+        "基準測試"
+      ]
+    },
+    {
+      "slug": "first-month",
+      "date": "2026-05-02",
+      "title": {
+        "zh": "給新進大學部專題生的第一個月"
+      },
+      "summary": {
+        "zh": "不是先讀論文，而是先讓一個數字動起來。"
+      },
+      "file": {
+        "zh": "2026-05-02-first-month.zh.md"
+      },
+      "author": "pi",
+      "tags": [
+        "專題",
+        "大學部",
+        "實驗室文化"
+      ]
+    },
+    {
+      "slug": "asplos-notes",
+      "date": "2026-02-20",
+      "title": {
+        "zh": "ASPLOS 2026 現場筆記"
+      },
+      "summary": {
+        "zh": "三天議程裡，關於量化與編譯的幾個轉向，以及我們被問最多的一個問題。"
+      },
+      "file": {
+        "zh": "2026-02-20-asplos-notes.zh.md"
+      },
+      "author": "pin-hsuan-chen",
+      "tags": [
+        "會議",
+        "量化",
+        "編譯器"
+      ]
+    }
+  ]
+}

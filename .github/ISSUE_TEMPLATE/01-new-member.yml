@@ -1,0 +1,59 @@
+name: New lab member
+description: Add someone to the roster. Anyone in the lab can file this.
+title: "Add <name> to <group>"
+labels: [content, people]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You can also edit `content/people.json` yourself and open a pull request.
+        This form exists so that nobody has to touch JSON to get onto the site.
+  - type: input
+    id: name_zh
+    attributes:
+      label: 中文姓名
+      placeholder: 陳品瑄
+    validations:
+      required: false
+  - type: input
+    id: name_en
+    attributes:
+      label: Name in English
+      placeholder: Pin-Hsuan Chen
+    validations:
+      required: true
+  - type: dropdown
+    id: group
+    attributes:
+      label: Group
+      options:
+        - 博士後研究員 / Postdoc
+        - 博士班 / PhD
+        - 碩士班 / Master's
+        - 大學部專題生 / Undergraduate
+    validations:
+      required: true
+  - type: input
+    id: role
+    attributes:
+      label: Year in the programme
+      placeholder: 碩士班一年級 / First-year master's student
+  - type: input
+    id: focus
+    attributes:
+      label: Specialisations, separated by commas
+      placeholder: 量化誤差分析, 低位元推論
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: What are you working on? One or two sentences.
+  - type: input
+    id: email
+    attributes:
+      label: Lab email address
+  - type: input
+    id: links
+    attributes:
+      label: Homepage or GitHub, if you want them listed

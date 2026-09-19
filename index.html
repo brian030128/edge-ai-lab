@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab</title>
+<meta name="description" content="Research lab: people, publications, and notes from the bench.">
+<link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">跳至主要內容 / Skip to content</a>
+
+<div class="shell">
+  <header class="rail" id="rail">
+    <a class="mark" href="#/">
+      <span class="mark__glyph" aria-hidden="true"></span>
+      <span class="mark__text">
+        <strong data-bind="lab.short">—</strong>
+        <span data-bind="lab.name">Loading</span>
+      </span>
+    </a>
+
+    <button class="rail__toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
+      <span class="rail__toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span data-i18n="nav.menu">選單</span>
+    </button>
+
+    <nav class="rail__nav" aria-label="Sections">
+      <ol id="navList"></ol>
+    </nav>
+
+    <div class="rail__foot">
+      <button class="lang" id="langToggle" aria-live="polite">English</button>
+      <p class="rail__src" id="sourceNote"></p>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div id="view"></div>
+  </main>
+</div>
+
+<div class="boot" id="boot" role="status">
+  <p>讀取設定中 / Reading config from the repository…</p>
+</div>
+
+<template id="tpl-error">
+  <section class="panel panel--error">
+    <h1 class="h-section">內容載入失敗 / Content did not load</h1>
+    <p class="lede"></p>
+    <pre class="err"></pre>
+    <p class="note">修正 <code>content/</code> 裡的檔案後重新整理即可。Fix the file in <code>content/</code>, commit, and reload.</p>
+  </section>
+</template>
+
+<script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

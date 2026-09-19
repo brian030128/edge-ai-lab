@@ -1,0 +1,15 @@
+{
+  "$comment": "Where the page reads its content from. Change source.mode to 'github' to read straight from the repository at runtime — a commit to the content branch then updates the live site with no rebuild.",
+  "source": {
+    "mode": "local",
+    "local": { "base": "content" },
+    "github": { "path": "content" }
+  },
+  "repo": {
+    "host": "github.com",
+    "owner": "example-lab",
+    "name": "lab-page",
+    "branch": "main"
+  },
+  "cache": { "ttlSeconds": 300 }
+}

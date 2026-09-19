@@ -1,0 +1,145 @@
+{
+  "items": [
+    {
+      "id": "aspl26-budget",
+      "year": 2026,
+      "type": "conference",
+      "title": "Per-layer error budgets beat uniform bit widths for edge inference",
+      "authors": ["Pin-Hsuan Chen", "Wei-Chen Hsu", "Yen-Ting Lin"],
+      "venue": "ASPLOS 2026 — 31st International Conference on Architectural Support for Programming Languages and Operating Systems",
+      "themes": ["compile"],
+      "award": { "zh": "最佳論文", "en": "Best Paper" },
+      "links": [
+        { "label": "PDF", "href": "https://example.org/papers/aspl26-budget.pdf" },
+        { "label": { "zh": "程式碼", "en": "Code" }, "href": "https://github.com/example-lab" },
+        { "label": "DOI", "href": "https://doi.org/10.0000/example.2026.1" }
+      ]
+    },
+    {
+      "id": "rtss26-deadline",
+      "year": 2026,
+      "type": "conference",
+      "title": "Deadline-safe co-residency of perception models on automotive SoCs",
+      "authors": ["Che-Wei Tang", "Yi-Ting Chang", "Yen-Ting Lin"],
+      "venue": "RTSS 2026 — IEEE Real-Time Systems Symposium",
+      "themes": ["sched"],
+      "links": [
+        { "label": "PDF", "href": "https://example.org/papers/rtss26-deadline.pdf" },
+        { "label": "DOI", "href": "https://doi.org/10.0000/example.2026.2" }
+      ]
+    },
+    {
+      "id": "arxiv26-drift",
+      "year": 2026,
+      "type": "preprint",
+      "title": "Three months in: measuring drift in deployed factory inspection models",
+      "authors": ["Jui-Hao Peng", "Meng-Chun Liu", "Yen-Ting Lin"],
+      "venue": "arXiv preprint",
+      "themes": ["measure"],
+      "links": [
+        { "label": "arXiv", "href": "https://arxiv.org/abs/0000.00000" }
+      ]
+    },
+    {
+      "id": "mlsys25-edgebench",
+      "year": 2025,
+      "type": "conference",
+      "title": "edgebench: reproducible latency measurement across consumer devices",
+      "authors": ["Chia-Ling Wu", "Hsin-Yu Lai", "Wei-Chen Hsu", "Yen-Ting Lin"],
+      "venue": "MLSys 2025 — Conference on Machine Learning and Systems",
+      "themes": ["measure"],
+      "links": [
+        { "label": "PDF", "href": "https://example.org/papers/mlsys25-edgebench.pdf" },
+        { "label": { "zh": "程式碼", "en": "Code" }, "href": "https://github.com/example-lab" }
+      ]
+    },
+    {
+      "id": "micro25-reuse",
+      "year": 2025,
+      "type": "conference",
+      "title": "Cross-operator memory reuse for NPUs without a scratchpad allocator",
+      "authors": ["Wei-Chen Hsu", "Cheng-Hao Shih", "Yen-Ting Lin"],
+      "venue": "MICRO 2025 — 58th IEEE/ACM International Symposium on Microarchitecture",
+      "themes": ["compile"],
+      "links": [
+        { "label": "PDF", "href": "https://example.org/papers/micro25-reuse.pdf" },
+        { "label": "DOI", "href": "https://doi.org/10.0000/example.2025.3" }
+      ]
+    },
+    {
+      "id": "tecs25-energy",
+      "year": 2025,
+      "type": "journal",
+      "title": "What on-device training costs: an energy model for federated updates",
+      "authors": ["Yu-Hsin Kuo", "Shih-Chi Huang", "Yen-Ting Lin"],
+      "venue": "ACM Transactions on Embedded Computing Systems, 24(3)",
+      "themes": ["privacy", "measure"],
+      "links": [
+        { "label": "DOI", "href": "https://doi.org/10.0000/example.2025.4" }
+      ]
+    },
+    {
+      "id": "iccad24-sparse",
+      "year": 2024,
+      "type": "conference",
+      "title": "Sparsity that hardware can use: structured pruning under a bandwidth bound",
+      "authors": ["Shu-Fen Liao", "Kuan-Ting Yeh", "Yen-Ting Lin"],
+      "venue": "ICCAD 2024 — International Conference on Computer-Aided Design",
+      "themes": ["compile", "sched"],
+      "links": [
+        { "label": "PDF", "href": "https://example.org/papers/iccad24-sparse.pdf" }
+      ]
+    },
+    {
+      "id": "emsoft24-sched",
+      "year": 2024,
+      "type": "conference",
+      "title": "A scheduler that admits it does not know the workload",
+      "authors": ["Yi-Ting Chang", "Che-Wei Tang", "Yen-Ting Lin"],
+      "venue": "EMSOFT 2024 — International Conference on Embedded Software",
+      "themes": ["sched"],
+      "award": { "zh": "最佳論文提名", "en": "Best Paper nominee" },
+      "links": [
+        { "label": "PDF", "href": "https://example.org/papers/emsoft24-sched.pdf" },
+        { "label": "DOI", "href": "https://doi.org/10.0000/example.2024.5" }
+      ]
+    },
+    {
+      "id": "interspeech24-quant",
+      "year": 2024,
+      "type": "conference",
+      "title": "Where low-bit speech models lose their accuracy, layer by layer",
+      "authors": ["Po-Wei Chiu", "Pin-Hsuan Chen", "Yen-Ting Lin"],
+      "venue": "INTERSPEECH 2024",
+      "themes": ["compile"],
+      "links": [
+        { "label": "PDF", "href": "https://example.org/papers/interspeech24-quant.pdf" }
+      ]
+    },
+    {
+      "id": "ppopp23-pipeline",
+      "year": 2023,
+      "type": "conference",
+      "title": "Pipelining inference across a phone's CPU, GPU and NPU",
+      "authors": ["Yi-Ting Chang", "Yen-Ting Lin"],
+      "venue": "PPoPP 2023 — Symposium on Principles and Practice of Parallel Programming",
+      "themes": ["sched"],
+      "links": [
+        { "label": "PDF", "href": "https://example.org/papers/ppopp23-pipeline.pdf" },
+        { "label": "DOI", "href": "https://doi.org/10.0000/example.2023.6" }
+      ]
+    },
+    {
+      "id": "sensys23-privacy",
+      "year": 2023,
+      "type": "conference",
+      "title": "The bandwidth price of keeping data on the device",
+      "authors": ["Shih-Chi Huang", "Yu-Hsin Kuo", "Yen-Ting Lin"],
+      "venue": "SenSys 2023 — ACM Conference on Embedded Networked Sensor Systems",
+      "themes": ["privacy"],
+      "links": [
+        { "label": "PDF", "href": "https://example.org/papers/sensys23-privacy.pdf" }
+      ]
+    }
+  ]
+}

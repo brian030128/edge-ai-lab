@@ -1,0 +1,41 @@
+name: New publication
+description: Add a paper to the publications list.
+title: "Add paper: <short title>"
+labels: [content, publications]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title, exactly as published
+    validations:
+      required: true
+  - type: input
+    id: authors
+    attributes:
+      label: Full author list in order, separated by commas
+    validations:
+      required: true
+  - type: input
+    id: venue
+    attributes:
+      label: Venue and year
+      placeholder: ASPLOS 2026 — 31st International Conference on …
+    validations:
+      required: true
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Research theme
+      description: Must match a theme id in content/site.json.
+      options: [compile, sched, measure, privacy]
+    validations:
+      required: true
+  - type: input
+    id: links
+    attributes:
+      label: Links (PDF, code, DOI)
+  - type: input
+    id: award
+    attributes:
+      label: Award, if any
+      placeholder: 最佳論文 / Best Paper

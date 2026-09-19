@@ -1,0 +1,30 @@
+name: Alumni update
+description: Tell us where you went. Graduates only — this updates the alumni table.
+title: "Alumni update: <name>"
+labels: [content, alumni]
+body:
+  - type: markdown
+    attributes:
+      value: The alumni table is only as current as what people send us. Thank you.
+  - type: input
+    id: name
+    attributes:
+      label: Your name, as it appears on the site
+    validations:
+      required: true
+  - type: input
+    id: org
+    attributes:
+      label: Where you are now
+      placeholder: MediaTek / 台積電 / Carnegie Mellon University
+    validations:
+      required: true
+  - type: input
+    id: role
+    attributes:
+      label: Your role there
+      placeholder: 資深編譯器工程師 / Senior compiler engineer
+  - type: input
+    id: link
+    attributes:
+      label: A link, if you would like one
