@@ -1,26 +1,6 @@
 {
   "items": [
     {
-      "id": "speculate-deep-neurips26",
-      "year": 2026,
-      "type": "conference",
-      "title": "Speculate Deep and Accurate: Lossless and Training-Free Acceleration for Offloaded LLMs via Substitute Speculative Decoding",
-      "authors": [
-        "Pei-Shuo Wang",
-        "Jian-Jia Chen",
-        "Chun-Che Yang",
-        "Chi-Chih Chang",
-        "Ning-Chi Huang",
-        "Mohamed Abdelfattah",
-        "Kai-Chiang Wu"
-      ],
-      "venue": "Advances in Neural Information Processing Systems (NeurIPS) 38, 54334–54357",
-      "themes": [
-        "llm"
-      ],
-      "links": []
-    },
-    {
       "id": "dustin-2026",
       "year": 2026,
       "type": "conference",
@@ -68,6 +48,26 @@
       ],
       "links": [],
       "year": 2026
+    },
+    {
+      "id": "speculate-deep-neurips25",
+      "year": 2025,
+      "type": "conference",
+      "title": "Speculate Deep and Accurate: Lossless and Training-Free Acceleration for Offloaded LLMs via Substitute Speculative Decoding",
+      "authors": [
+        "Pei-Shuo Wang",
+        "Jian-Jia Chen",
+        "Chun-Che Yang",
+        "Chi-Chih Chang",
+        "Ning-Chi Huang",
+        "Mohamed Abdelfattah",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "Advances in Neural Information Processing Systems 38 (NeurIPS 2025), 54334–54357",
+      "themes": [
+        "llm"
+      ],
+      "links": []
     },
     {
       "id": "palu-iclr25",

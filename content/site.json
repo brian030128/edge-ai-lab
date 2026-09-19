@@ -60,12 +60,12 @@
     "bio": {
       "zh": [
         "吳凱強的研究處理同一個落差：模型的能力成長得比硬體快。實驗室的工作是把這個落差拆成可以動手的問題——一個 KV-Cache 到底需要多少記憶體、一次解碼能不能少跑幾層、加速器上的稀疏結構要長成什麼樣子，硬體才真的省得到時間。",
-        "近年的主軸是大型語言模型的推論效率：以低秩投影壓縮 KV-Cache（Palu, ICLR 2025）、以替代草稿模型加速 offloaded 推論的推測解碼（NeurIPS 2026），以及視覺模型的逐層 N:M 稀疏與低秩架構搜尋（ELSA、FLORA）。這條線延續實驗室較早的硬體路線：可分解 MAC 的收縮陣列、FPGA 上的稀疏張量單元，以及加速器的容錯設計。",
+        "近年的主軸是大型語言模型的推論效率：以低秩投影壓縮 KV-Cache（Palu, ICLR 2025）、以替代草稿模型加速 offloaded 推論的推測解碼（NeurIPS 2025），以及視覺模型的逐層 N:M 稀疏與低秩架構搜尋（ELSA、FLORA）。這條線延續實驗室較早的硬體路線：可分解 MAC 的收縮陣列、FPGA 上的稀疏張量單元，以及加速器的容錯設計。",
         "實驗室與康乃爾大學、德州大學奧斯汀分校等研究群合作。畢業生多進入台灣半導體與 EDA 產業，也有人繼續攻讀博士。"
       ],
       "en": [
         "Kai-Chiang Wu's work addresses one gap: models grow more capable faster than hardware grows able to run them. The lab breaks that gap into things you can act on — how much memory a KV-cache really needs, whether a decoding step can skip layers, and which sparsity structures let an accelerator save time rather than only save parameters.",
-        "The current focus is inference efficiency for large language models: compressing the KV-cache with low-rank projection (Palu, ICLR 2025), speculative decoding with substitute drafters for offloaded inference (NeurIPS 2026), and layer-wise N:M sparsity and low-rank architecture search for vision models (ELSA, FLORA). It continues the lab's longer line of hardware work: systolic arrays built on decomposable MACs, sparse tensor units for FPGAs, and fault mitigation for accelerators.",
+        "The current focus is inference efficiency for large language models: compressing the KV-cache with low-rank projection (Palu, ICLR 2025), speculative decoding with substitute drafters for offloaded inference (NeurIPS 2025), and layer-wise N:M sparsity and low-rank architecture search for vision models (ELSA, FLORA). It continues the lab's longer line of hardware work: systolic arrays built on decomposable MACs, sparse tensor units for FPGAs, and fault mitigation for accelerators.",
         "The lab collaborates with groups at Cornell and UT Austin. Graduates go mostly into Taiwan's semiconductor and EDA industry, and several have continued to doctoral study abroad."
       ]
     },
