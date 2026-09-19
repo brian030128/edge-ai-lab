@@ -112,9 +112,6 @@
         "Diana Marculescu"
       ],
       "venue": "ACM/SIGDA International Symposium on Field-Programmable Gate Arrays (FPGA) 2025",
-      "themes": [
-        "accel"
-      ],
       "links": []
     },
     {
@@ -149,8 +146,7 @@
       ],
       "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW) 2024",
       "themes": [
-        "compress",
-        "accel"
+        "compress"
       ],
       "links": []
     },
@@ -208,9 +204,6 @@
         "Kai-Chiang Wu"
       ],
       "venue": "International Symposium on Quality Electronic Design (ISQED) 2023, 1–8",
-      "themes": [
-        "accel"
-      ],
       "links": []
     },
     {
@@ -225,9 +218,6 @@
         "Kai-Chiang Wu"
       ],
       "venue": "IEEE VLSI Test Symposium (VTS) 2021, 1–7",
-      "themes": [
-        "accel"
-      ],
       "links": []
     },
     {
@@ -241,9 +231,6 @@
         "Kai-Chiang Wu"
       ],
       "venue": "Design, Automation and Test in Europe (DATE) 2019, 692–697",
-      "themes": [
-        "accel"
-      ],
       "links": []
     }
   ]

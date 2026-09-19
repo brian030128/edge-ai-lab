@@ -87,10 +87,6 @@
         "en": "Quantisation and low-rank decomposition"
       },
       {
-        "zh": "稀疏 AI 加速器",
-        "en": "Sparse AI accelerators"
-      },
-      {
         "zh": "裝置端學習",
         "en": "On-device learning"
       }
@@ -136,17 +132,6 @@
       }
     },
     {
-      "id": "accel",
-      "name": {
-        "zh": "AI 加速器與硬體設計",
-        "en": "AI accelerators and hardware"
-      },
-      "summary": {
-        "zh": "稀疏與量化只有在硬體支援時才會變成速度。我們設計可分解的 MAC、收縮陣列與 FPGA 上的稀疏張量單元，並處理加速器在近似與故障下的容錯。",
-        "en": "Sparsity and quantisation only become speed if the hardware can exploit them. We design decomposable MACs, systolic arrays and sparse tensor units for FPGAs, and handle fault mitigation when accelerators approximate or fail."
-      }
-    },
-    {
       "id": "ondevice",
       "name": {
         "zh": "裝置端學習與部署",
@@ -161,11 +146,11 @@
   "join": {
     "body": {
       "zh": [
-        "實驗室招收博士班、碩士班與大學部專題生，研究方向涵蓋大型語言模型的推論效率、模型壓縮與 AI 加速器設計。",
+        "實驗室招收博士班、碩士班與大學部專題生，研究方向涵蓋大型語言模型的推論效率與模型壓縮。",
         "有興趣的同學請來信與主持人聯絡，並簡述你的背景與想投入的方向。"
       ],
       "en": [
-        "The lab takes doctoral students, master's students and undergraduate project students. The work spans inference efficiency for large language models, model compression and AI accelerator design.",
+        "The lab takes doctoral students, master's students and undergraduate project students. The work spans inference efficiency for large language models and model compression.",
         "If you are interested, write to the PI with a short description of your background and the direction you would like to work in."
       ]
     },
