@@ -14,11 +14,11 @@
       "en": "We make large models run on hardware that cannot afford them. KV-cache compression, low-rank projection, speculative decoding, sparse accelerator design — all of it works on one problem: bringing a model's compute and memory down to what a device can actually carry."
     },
     "contact": {
-      "email": "",
+      "email": "kcw@cs.nycu.edu.tw",
       "phone": "",
       "office": {
-        "zh": "",
-        "en": ""
+        "zh": "工程三館 633 室",
+        "en": "Room 633, Engineering Building 3"
       },
       "address": {
         "zh": "新竹市東區大學路 1001 號",
@@ -51,7 +51,7 @@
       "en": "Professor and principal investigator"
     },
     "photo": "img/pi.jpg",
-    "email": "",
+    "email": "kcw@cs.nycu.edu.tw",
     "office": {
       "zh": "",
       "en": ""
@@ -99,8 +99,8 @@
       {
         "year": "",
         "detail": {
-          "zh": "博士，卡內基美隆大學（Carnegie Mellon University）",
-          "en": "PhD, Carnegie Mellon University"
+          "zh": "博士，美國卡內基美隆大學 電機與電腦工程學系",
+          "en": "PhD in Electrical and Computer Engineering, Carnegie Mellon University"
         }
       },
       {
@@ -169,6 +169,14 @@
         "Undergraduate projects run for a year and start from a reproducible measurement; students who take to it usually continue the topic as a master's thesis. Write to the PI with a transcript and a paragraph about the longest you have ever spent debugging something."
       ]
     },
-    "cta": []
+    "cta": [
+      {
+        "label": {
+          "zh": "寄信給主持人",
+          "en": "Email the PI"
+        },
+        "href": "mailto:kcw@cs.nycu.edu.tw"
+      }
+    ]
   }
 }

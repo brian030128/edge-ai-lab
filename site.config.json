@@ -1,15 +1,21 @@
 {
-  "$comment": "Where the page reads its content from. Change source.mode to 'github' to read straight from the repository at runtime — a commit to the content branch then updates the live site with no rebuild.",
+  "$comment": "Where the page reads its content from. Fill in repo.owner and repo.name to turn on the footer's edit link and the ?source=github preview mode; set source.mode to 'github' to read content straight from the repository at runtime.",
   "source": {
     "mode": "local",
-    "local": { "base": "content" },
-    "github": { "path": "content" }
+    "local": {
+      "base": "content"
+    },
+    "github": {
+      "path": "content"
+    }
   },
   "repo": {
     "host": "github.com",
-    "owner": "example-lab",
-    "name": "lab-page",
+    "owner": "",
+    "name": "",
     "branch": "main"
   },
-  "cache": { "ttlSeconds": 300 }
+  "cache": {
+    "ttlSeconds": 300
+  }
 }
