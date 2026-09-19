@@ -31,6 +31,7 @@ content/                 everything a lab member ever edits
   site.json              lab identity, PI, research themes, contact and openings
   people.json            current members by group, and the alumni table
   publications.json      papers, with the theme ids used by the filters
+  img/                   portraits and any other pictures
   blog/
     index.json           generated listing — run npm run blog:index
     YYYY-MM-DD-slug.zh.md   posts, one file per language
@@ -38,6 +39,8 @@ scripts/
   serve.mjs              local preview server
   check-content.mjs      validates content/ and reports the exact field at fault
   build-blog-index.mjs   rebuilds content/blog/index.json from the posts
+  import-roster.py       rebuilds people.json from the roster spreadsheet
+吳凱強實驗室學生成員.xlsx  the roster as the lab keeps it
 .github/
   workflows/pages.yml    validate on every pull request, publish main to Pages
   ISSUE_TEMPLATE/        forms for people who would rather not edit JSON
@@ -95,49 +98,67 @@ unique — blog posts credit their author by it.
 
 ```jsonc
 {
-  "id": "chia-ling-wu",
-  "name": { "zh": "吳佳玲", "en": "Chia-Ling Wu" },
-  "role": { "zh": "碩士班二年級", "en": "Second-year master's student" },
-  "focus": [                                  // what they specialise in
-    { "zh": "基準測試", "en": "Benchmarking" }
-  ],
-  "work": { "zh": "…", "en": "…" },           // one or two sentences
-  "email": "clwu@example.edu.tw",
+  "id": "陳建嘉",                              // unique; blog posts credit authors by it
+  "name": { "zh": "陳建嘉", "en": "Jian-Jia Chen" },   // or just "陳建嘉"
+  "aliases": ["JJ Chen"],                     // how they appear in author lists
+  "since": 2024,                              // shown as "2024 年進入實驗室"
+  "focus": ["Speculative decoding", "quantization"],
+  "work": "Speculative decoding, kv cache compression, quantization",
+  "email": "",
   "photo": "",                                // optional; initials are used when empty
-  "links": [{ "label": "GitHub", "href": "https://github.com/…" }]
+  "links": []
 }
 ```
 
-Groups are whatever you put in `people.json` — the four here are 博士後研究員,
-博士班, 碩士班 and 大學部專題生. Rename them, reorder them or add one; the hero
-strip, the navigation counts and the roster all follow the file.
+Groups are whatever you put in the file: 博士班, 碩士班 and 大學部專題生. Rename
+them, reorder them or add one; the hero strip, the counts and the roster all
+follow the file. An empty group is hidden, so 大學部專題生 sits there waiting for
+the next 專題生 without showing an empty heading.
+
+Aliases matter because publication lists print initials. Giving 陳建嘉 the alias
+"JJ Chen" is what sets that name in bold in the publications section. An alias
+belongs to one person; the validator rejects two people claiming the same one.
 
 ### Move someone to alumni
 
-Cut the entry out of its group and add it to `alumni`, with the degree, the year
-they left, their thesis title and where they went:
+Cut the entry out of its group and add it to `alumni`, with the degree, the
+years, what they worked on and where they went:
 
 ```jsonc
 {
-  "id": "cheng-hao-shih",
-  "name": { "zh": "施承澔", "en": "Cheng-Hao Shih" },
-  "degree": { "zh": "博士", "en": "PhD" },
-  "year": 2025,
-  "thesis": { "zh": "…", "en": "…" },
-  "now": { "org": "MediaTek", "role": { "zh": "資深編譯器工程師", "en": "Senior compiler engineer" } }
+  "name": { "zh": "王培碩", "en": "Pei-Shuo Wang" },
+  "degree": { "zh": "碩士", "en": "MS" },
+  "since": 2023,                     // the table prints "2023-2026"
+  "year": 2026,                      // the year they left; the table sorts on it
+  "research": "Acceleration for the Inference of Offloaded Large Language Models",
+  "focus": ["Speculative Decoding", "quantization"],
+  "now": { "org": "UT Austin", "role": { "zh": "博士生", "en": "PhD student" } }
 }
 ```
 
-The alumni table sorts itself by year. Undergraduates who did a 大學部專題 belong
-here too, with `degree` 學士 / BS.
+`degree`, `year` and `now` may all be missing. A roster kept for ten years has
+gaps, so the validator warns instead of failing, and rows with no year sort
+last. Someone who did a master's here and stayed on for a PhD appears in both
+places: give the alias to the current record only.
 
 ### Add a paper
 
-Append to `content/publications.json`. `themes` must use ids from
-`site.json`'s `themes` list — the validator will tell you if one does not exist.
-Authors are plain strings; any author whose name matches someone in
-`people.json` (current or alumni, 中文 or English) is set in bold automatically,
-so there is no separate list of lab authors to keep in sync.
+Append to `content/publications.json`. `themes` must use ids from the `themes`
+list in `site.json` — the validator will tell you if one does not exist.
+Authors are plain strings; any author whose name or alias matches someone in
+`people.json` is set in bold automatically, so there is no second list of lab
+authors to keep in sync.
+
+A paper with no year yet takes a `status` instead, and is listed above the years:
+
+```jsonc
+{ "id": "shadowspec", "status": "toappear",   "title": "...", "venue": "..." }
+{ "id": "sysarray",   "status": "manuscript", "title": "..." }
+```
+
+`toappear` prints under 即將發表, `manuscript` under 手稿, and a manuscript may
+omit the venue. Give the entry a `year` when it is published and it moves into
+the main list on its own.
 
 ### Write a blog post
 
@@ -201,22 +222,42 @@ with **Settings → Pages → Source: GitHub Actions**, and the site is live at
 Because the repository is the site, any static host works too: copy the whole
 directory. Do not "build" it.
 
-## Before this goes live
+## Updating the roster from the spreadsheet
 
-The content here is placeholder. Replace, in order:
+The lab keeps its roster in `吳凱強實驗室學生成員.xlsx`. After editing it:
 
-1. `content/site.json` — lab name, institution, statement, the PI's bio,
-   research themes, contact details, the openings text.
-2. `content/people.json` — everyone. Delete the example people rather than
-   editing around them.
-3. `content/publications.json` — real papers; the example links point at
-   `example.org` and will not resolve.
-4. `content/blog/` — delete the three example posts.
-5. `site.config.json` — `repo.owner` and `repo.name`, so the footer's edit link
-   and `?source=github` work.
-6. Portraits: drop images under `content/img/` and set `photo` to
-   `img/<file>`. Until then the page draws initials, which is a deliberate
-   placeholder rather than a broken image.
+```
+python scripts/import-roster.py
+npm run check
+git diff content/people.json     # read this before committing
+```
+
+The importer rewrites `people.json` from the two sheets and preserves the
+English names and author aliases that the spreadsheet does not carry.
+Undergraduates are not in the spreadsheet either, so add them to `people.json`
+by hand — the importer leaves that group untouched.
+
+## Pictures
+
+Put them in `content/img/` and reference them as `img/<file>`, for example
+`"photo": "img/pi.jpg"`. Paths are resolved against whichever content source is
+in use, so the same value works locally and when reading from GitHub; absolute
+URLs are left alone. Resize before committing — a portrait shows at about 300px
+wide, so a 800px-wide JPEG is plenty.
+
+Anyone with no `photo` gets their initials in a ruled frame. That is a
+deliberate placeholder, not a missing image.
+
+## Still to fill in
+
+- `content/site.json` — the lab email, the PI's email, office and room number,
+  and links for the PI (department profile, Scholar). Empty fields are hidden
+  rather than printed blank, so the contact list stays tidy meanwhile.
+- `content/people.json` — `npm run check` lists the real gaps as warnings:
+  students with no specialisation recorded, alumni with no destination or no
+  year, and the two research assistants with no dates.
+- `content/blog/` — empty. The section shows its empty state until the first
+  post lands.
 
 ## Notes
 

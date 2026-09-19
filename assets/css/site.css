@@ -332,6 +332,7 @@ main:focus, main:focus-visible { outline: none; }
 }
 
 .note { color: var(--ink-2); font-size: var(--step--1); max-width: min(var(--measure), 100%); }
+.note--table { margin: 0 0 1rem; }
 .note code { font-family: var(--mono); font-size: .95em; }
 
 /* ---------------------------------------------------------------- hero --- */
@@ -442,7 +443,7 @@ main:focus, main:focus-visible { outline: none; }
 .pi { display: grid; gap: clamp(1.6rem, 4vw, 3.2rem); grid-template-columns: 1fr; align-items: start; }
 
 @media (min-width: 760px) {
-  .pi { grid-template-columns: minmax(190px, 260px) minmax(0, 1fr); }
+  .pi { grid-template-columns: minmax(210px, 300px) minmax(0, 1fr); }
   .pi__portrait { max-width: none; }
 }
 
@@ -501,6 +502,7 @@ main:focus, main:focus-visible { outline: none; }
 
 .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; font-size: var(--step--1); }
 .timeline li { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: .8rem; }
+.timeline li.timeline__row--nodate { grid-template-columns: minmax(0, 1fr); }
 .timeline b { font-weight: 500; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .timeline span { color: var(--ink-2); }
 
@@ -554,7 +556,15 @@ main:focus, main:focus-visible { outline: none; }
 .year-block:last-child { margin-bottom: 0; }
 
 @media (min-width: 760px) {
-  .year-block { grid-template-columns: 5rem minmax(0, 1fr); gap: 1.8rem; }
+  .year-block { grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1.6rem; }
+}
+
+.year-block__year--status {
+  font-size: var(--step--1);
+  white-space: nowrap;
+  color: var(--seal);
+  border-left: 2px solid var(--seal);
+  padding-left: .5rem;
 }
 
 .year-block__year {
@@ -675,7 +685,14 @@ main:focus, main:focus-visible { outline: none; }
 .alumni .col-year, .alumni .col-degree { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--ink-2); }
 .alumni .col-now b { font-weight: 500; }
 .alumni .col-now span { display: block; color: var(--ink-2); font-size: var(--step--2); }
-.alumni .col-thesis { color: var(--ink-2); max-width: min(32ch, 100%); }
+.alumni .col-research { color: var(--ink); max-width: min(38ch, 100%); }
+.alumni .col-research span {
+  display: block;
+  margin-top: .2rem;
+  color: var(--ink-2);
+  font-size: var(--step--2);
+  line-height: 1.5;
+}
 
 @media (max-width: 719px) {
   .alumni, .alumni tbody, .alumni tr, .alumni td { display: block; width: 100%; }

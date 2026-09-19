@@ -22,11 +22,11 @@ export const UI = {
     all: "全部",
     since: (y) => `${y} 年進入實驗室`,
     alumni: "畢業校友",
-    alumniNote: "畢業年份與目前去向，由校友自行回報。",
+    alumniNote: "在學期間與目前去向，由校友自行回報；空白表示尚未更新。",
     colName: "姓名",
     colDegree: "學位",
-    colYear: "畢業",
-    colThesis: "論文題目",
+    colYear: "在學期間",
+    colResearch: "研究方向",
     colNow: "目前",
     readingNow: "研究中",
     back: "回研究日誌",
@@ -42,6 +42,8 @@ export const UI = {
     address: "地址",
     tel: "電話",
     lastPost: "最新日誌",
+    toappear: "即將發表",
+    manuscript: "手稿",
   },
   en: {
     menu: "Menu",
@@ -60,11 +62,11 @@ export const UI = {
     all: "All",
     since: (y) => `Joined ${y}`,
     alumni: "Alumni",
-    alumniNote: "Graduation year and current role, as reported by alumni.",
+    alumniNote: "Years in the lab and current role, as reported by alumni. Blank means not yet updated.",
     colName: "Name",
     colDegree: "Degree",
-    colYear: "Left",
-    colThesis: "Thesis",
+    colYear: "Years",
+    colResearch: "Research",
     colNow: "Now",
     readingNow: "Working on",
     back: "All lab notes",
@@ -80,8 +82,19 @@ export const UI = {
     address: "Address",
     tel: "Phone",
     lastPost: "Latest note",
+    toappear: "To appear",
+    manuscript: "Manuscript",
   },
 };
+
+/** A photo path in content/ is resolved against whichever source is in use,
+ *  so the same config works for a local deploy and for reading from GitHub.
+ *  Absolute URLs are left alone. */
+function assetUrl(data, path) {
+  if (!path) return "";
+  if (/^(https?:|data:|\/)/i.test(path)) return path;
+  return typeof data.asset === "function" ? data.asset(path) : path;
+}
 
 export const SECTIONS = [
   { id: "pi", key: "pi" },
@@ -93,6 +106,12 @@ export const SECTIONS = [
 ];
 
 /* ------------------------------------------------------------------ hero -- */
+
+/** True when a value has text in at least one language. `{ zh: "", en: "" }`
+ *  is a field someone has not filled in yet, not a value. */
+function has(value, lang) {
+  return Boolean(t(value, lang).trim());
+}
 
 export function heroView(data, lang) {
   const ui = UI[lang];
@@ -164,7 +183,7 @@ export function piView(data, lang) {
 
   const meta = [];
   if (pi.email) meta.push([ui.email, `<a href="mailto:${escUrl(pi.email)}">${esc(pi.email)}</a>`]);
-  if (pi.office) meta.push([ui.office, esc(t(pi.office, lang))]);
+  if (has(pi.office, lang)) meta.push([ui.office, esc(t(pi.office, lang))]);
   for (const link of list(pi.links)) {
     meta.push([esc(t(link.label, lang)), `<a href="${escUrl(link.href)}" target="_blank" rel="noopener">${esc(link.text || shortHost(link.href))}</a>`]);
   }
@@ -174,7 +193,7 @@ export function piView(data, lang) {
     ${sectionHead(ui.pi, lang === "zh" ? UI.en.pi : UI.zh.pi)}
     <div class="pi">
       <div>
-        ${portrait(pi, lang)}
+        ${portrait(pi, lang, data)}
         <dl class="pi__meta">
           ${meta.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join("")}
         </dl>
@@ -194,7 +213,9 @@ export function piView(data, lang) {
         ${list(pi.education).length ? `
           <h4 class="subhead">${esc(ui.education)}</h4>
           <ul class="timeline">${list(pi.education).map((row) => `
-            <li><b>${esc(row.year)}</b><span>${esc(t(row.detail, lang))}</span></li>
+            <li${row.year ? "" : ' class="timeline__row--nodate"'}>${
+              row.year ? `<b>${esc(row.year)}</b>` : ""
+            }<span>${esc(t(row.detail, lang))}</span></li>
           `).join("")}</ul>
         ` : ""}
       </div>
@@ -202,9 +223,9 @@ export function piView(data, lang) {
   </section>`;
 }
 
-function portrait(person, lang) {
+function portrait(person, lang, data) {
   if (person.photo) {
-    return `<img class="pi__portrait" src="${escUrl(person.photo)}" alt="${esc(t(person.name, lang))}" loading="lazy">`;
+    return `<img class="pi__portrait" src="${escUrl(assetUrl(data, person.photo))}" alt="${esc(t(person.name, lang))}" loading="lazy">`;
   }
   return `<div class="pi__portrait pi__portrait--empty" aria-hidden="true"><span>${esc(initial(person.name))}</span></div>`;
 }
@@ -287,11 +308,22 @@ export function worksBody(data, lang, activeTheme = "all") {
   const all = list(data.publications.items);
   const names = labNames(data.people, data.site);
   const shown = activeTheme === "all" ? all : all.filter((p) => list(p.themes).includes(activeTheme));
-  const years = [...new Set(shown.map((p) => Number(p.year)))].sort((a, b) => b - a);
+  const years = [...new Set(shown.map((p) => Number(p.year)).filter(Boolean))].sort((a, b) => b - a);
 
-  if (!years.length) return `<p class="empty">${esc(ui.noPubs)}</p>`;
+  const pending = shown.filter((p) => !p.year && p.status);
+  if (!years.length && !pending.length) return `<p class="empty">${esc(ui.noPubs)}</p>`;
 
-  return years.map((year) => `
+  const pendingBlocks = ["toappear", "manuscript"].map((status) => {
+    const items = pending.filter((p) => p.status === status);
+    if (!items.length) return "";
+    return `
+    <div class="year-block">
+      <h3 class="year-block__year year-block__year--status">${esc(ui[status])}</h3>
+      <ul class="pubs">${items.map((p) => pubItem(p, lang, names)).join("")}</ul>
+    </div>`;
+  }).join("");
+
+  return pendingBlocks + years.map((year) => `
     <div class="year-block">
       <h3 class="year-block__year">${esc(year)}</h3>
       <ul class="pubs">
@@ -332,9 +364,15 @@ function labNames(people, site) {
     if (typeof name === "string") set.add(normalise(name));
     else for (const v of Object.values(name)) if (v) set.add(normalise(v));
   };
-  add(site.pi?.name);
-  for (const g of list(people.groups)) for (const m of list(g.members)) add(m.name);
-  for (const a of list(people.alumni)) add(a.name);
+  const addPerson = (p) => {
+    if (!p) return;
+    add(p.name);
+    // Publication lists print initials ("KC Wu"); aliases say which person that is.
+    for (const alias of list(p.aliases)) add(alias);
+  };
+  addPerson(site.pi);
+  for (const g of list(people.groups)) for (const m of list(g.members)) addPerson(m);
+  for (const a of list(people.alumni)) addPerson(a);
   return set;
 }
 
@@ -361,7 +399,7 @@ export function peopleView(data, lang) {
           }</h3>
           <b>${esc(ui.people_n(members.length))}</b>
         </div>
-        <ul class="roster">${members.map((m) => personRow(m, lang)).join("")}</ul>
+        <ul class="roster">${members.map((m) => personRow(m, lang, data)).join("")}</ul>
       </section>`;
     }).join("")}
 
@@ -369,7 +407,7 @@ export function peopleView(data, lang) {
   </section>`;
 }
 
-function personRow(m, lang) {
+function personRow(m, lang, data) {
   const ui = UI[lang];
   const links = list(m.links).map((l) =>
     `<a href="${escUrl(l.href)}" target="_blank" rel="noopener">${esc(t(l.label, lang))}</a>`
@@ -381,7 +419,7 @@ function personRow(m, lang) {
   return `
   <li class="person">
     ${m.photo
-      ? `<img class="person__photo" src="${escUrl(m.photo)}" alt="${esc(t(m.name, lang))}" loading="lazy">`
+      ? `<img class="person__photo" src="${escUrl(assetUrl(data, m.photo))}" alt="${esc(t(m.name, lang))}" loading="lazy">`
       : `<div class="person__photo person__photo--empty" aria-hidden="true">${esc(initial(m.name))}</div>`}
     <div class="person__id">
       <h4 class="person__name">${esc(t(m.name, lang))}${
@@ -401,7 +439,13 @@ function personRow(m, lang) {
 
 function alumniTable(alumni, lang) {
   const ui = UI[lang];
-  const rows = [...alumni].sort((a, b) => Number(b.year) - Number(a.year));
+  // Most recent first; anyone whose years were never recorded sorts last.
+  const rows = [...alumni].sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
+
+  const years = (a) => {
+    if (a.since && a.year) return `${a.since}–${a.year}`;
+    return String(a.year || a.since || "");
+  };
 
   return `
   <section class="group">
@@ -409,14 +453,14 @@ function alumniTable(alumni, lang) {
       <h3>${esc(ui.alumni)}${lang === "zh" ? `<span>${esc(UI.en.alumni)}</span>` : ""}</h3>
       <b>${esc(ui.people_n(rows.length))}</b>
     </div>
-    <p class="note" style="margin:0 0 1rem">${esc(ui.alumniNote)}</p>
+    <p class="note note--table">${esc(ui.alumniNote)}</p>
     <table class="alumni">
       <thead>
         <tr>
           <th>${esc(ui.colName)}</th>
           <th>${esc(ui.colDegree)}</th>
           <th>${esc(ui.colYear)}</th>
-          <th>${esc(ui.colThesis)}</th>
+          <th>${esc(ui.colResearch)}</th>
           <th>${esc(ui.colNow)}</th>
         </tr>
       </thead>
@@ -427,8 +471,12 @@ function alumniTable(alumni, lang) {
             alt(a.name, lang) ? `<span>${esc(alt(a.name, lang))}</span>` : ""
           }</td>
           <td class="col-degree" data-label="${esc(ui.colDegree)}">${esc(t(a.degree, lang))}</td>
-          <td class="col-year" data-label="${esc(ui.colYear)}">${esc(a.year)}</td>
-          <td class="col-thesis" data-label="${esc(ui.colThesis)}">${esc(t(a.thesis, lang))}</td>
+          <td class="col-year" data-label="${esc(ui.colYear)}">${esc(years(a))}</td>
+          <td class="col-research" data-label="${esc(ui.colResearch)}">${esc(t(a.research, lang))}${
+            list(a.focus).length
+              ? `<span>${list(a.focus).map((f) => esc(t(f, lang))).join(" · ")}</span>`
+              : ""
+          }</td>
           <td class="col-now" data-label="${esc(ui.colNow)}">${
             a.now
               ? `${a.now.href
@@ -487,8 +535,8 @@ export function joinView(data, lang) {
 
   const rows = [];
   if (contact.email) rows.push([ui.email, `<a href="mailto:${escUrl(contact.email)}">${esc(contact.email)}</a>`]);
-  if (contact.office) rows.push([ui.office, esc(t(contact.office, lang))]);
-  if (contact.address) rows.push([ui.address, esc(t(contact.address, lang))]);
+  if (has(contact.office, lang)) rows.push([ui.office, esc(t(contact.office, lang))]);
+  if (has(contact.address, lang)) rows.push([ui.address, esc(t(contact.address, lang))]);
   if (contact.phone) rows.push([ui.tel, esc(contact.phone)]);
   for (const l of list(data.site.lab?.links)) {
     rows.push([esc(t(l.label, lang)), `<a href="${escUrl(l.href)}" target="_blank" rel="noopener">${esc(l.text || shortHost(l.href))}</a>`]);

@@ -1,273 +1,1061 @@
 {
   "groups": [
     {
-      "id": "postdoc",
-      "label": { "zh": "博士後研究員", "en": "Postdoctoral researchers" },
-      "members": [
-        {
-          "id": "wei-chen-hsu",
-          "name": { "zh": "許維宸", "en": "Wei-Chen Hsu" },
-          "role": { "zh": "博士後研究員　2025 年起", "en": "Postdoctoral researcher, since 2025" },
-          "focus": [
-            { "zh": "編譯器後端", "en": "Compiler backends" },
-            { "zh": "算子融合", "en": "Operator fusion" },
-            { "zh": "MLIR" , "en": "MLIR" }
-          ],
-          "work": {
-            "zh": "負責實驗室編譯器工具鏈的維護，目前在做跨算子的記憶體重用分析，讓小型 NPU 不必把中間張量寫回 DRAM。",
-            "en": "Maintains the lab's compiler toolchain. Currently working on cross-operator memory reuse analysis so small NPUs never have to spill intermediate tensors to DRAM."
-          },
-          "email": "wchsu@example.edu.tw",
-          "links": [{ "label": "GitHub", "href": "https://github.com/example-lab" }]
-        }
-      ]
-    },
-    {
       "id": "phd",
-      "label": { "zh": "博士班", "en": "Doctoral students" },
+      "label": {
+        "zh": "博士班",
+        "en": "Doctoral students"
+      },
       "members": [
         {
-          "id": "pin-hsuan-chen",
-          "name": { "zh": "陳品瑄", "en": "Pin-Hsuan Chen" },
-          "role": { "zh": "博士班四年級", "en": "Fourth-year PhD student" },
-          "focus": [
-            { "zh": "量化誤差分析", "en": "Quantisation error analysis" },
-            { "zh": "低位元推論", "en": "Low-bit inference" }
-          ],
-          "work": {
-            "zh": "研究量化誤差如何在深層網路中累積，並提出以逐層誤差預算取代統一位元寬度的配置方法。2026 年 ASPLOS 最佳論文。",
-            "en": "Studies how quantisation error accumulates through a deep network, and replaces uniform bit widths with a per-layer error budget. Best paper at ASPLOS 2026."
+          "id": "林瑋晟",
+          "name": {
+            "zh": "林瑋晟",
+            "en": "Wei-Cheng Lin"
           },
-          "email": "phchen@example.edu.tw",
-          "links": [{ "label": { "zh": "個人網頁", "en": "Homepage" }, "href": "https://example.edu.tw/~phchen" }]
+          "since": 2024,
+          "focus": [
+            "Quantization",
+            "KV-Cache Compression",
+            "Low Rank Decomposition",
+            "IC Design"
+          ],
+          "work": "KV-Cache Compression",
+          "links": [],
+          "aliases": [
+            "WC Lin"
+          ]
         },
         {
-          "id": "che-wei-tang",
-          "name": { "zh": "湯哲維", "en": "Che-Wei Tang" },
-          "role": { "zh": "博士班三年級", "en": "Third-year PhD student" },
+          "id": "翁輝憲",
+          "name": "翁輝憲",
+          "since": 2024,
           "focus": [
-            { "zh": "即時排程", "en": "Real-time scheduling" },
-            { "zh": "車用系統", "en": "Automotive systems" },
-            { "zh": "延遲上限證明", "en": "Latency bounds" }
+            "Low Rank Decomposition"
           ],
-          "work": {
-            "zh": "在車用 SoC 上做多模型共存的排程，證明在最壞情況下仍能滿足感知管線的截止時間。與國內車用電子廠商合作。",
-            "en": "Schedules co-resident models on automotive SoCs and proves worst-case deadlines still hold for the perception pipeline. Works with an automotive electronics partner."
-          },
-          "email": "cwtang@example.edu.tw",
+          "work": "SVD",
           "links": []
         },
         {
-          "id": "yu-hsin-kuo",
-          "name": { "zh": "郭宇昕", "en": "Yu-Hsin Kuo" },
-          "role": { "zh": "博士班一年級", "en": "First-year PhD student" },
-          "focus": [
-            { "zh": "聯邦學習", "en": "Federated learning" },
-            { "zh": "差分隱私", "en": "Differential privacy" },
-            { "zh": "能耗量測", "en": "Energy measurement" }
-          ],
-          "work": {
-            "zh": "量測裝置端訓練的真實能耗，並研究隱私預算與電池壽命之間的交換關係。碩士班同樣在本實驗室完成。",
-            "en": "Measures what on-device training actually costs in battery terms, and studies the exchange rate between privacy budget and device lifetime. Did a master's here as well."
-          },
-          "email": "yhkuo@example.edu.tw",
+          "id": "詹賀鈞",
+          "name": "詹賀鈞",
+          "since": 2025,
           "links": []
         }
       ]
     },
     {
       "id": "masters",
-      "label": { "zh": "碩士班", "en": "Master's students" },
+      "label": {
+        "zh": "碩士班",
+        "en": "Master's students"
+      },
       "members": [
         {
-          "id": "chia-ling-wu",
-          "name": { "zh": "吳佳玲", "en": "Chia-Ling Wu" },
-          "role": { "zh": "碩士班二年級", "en": "Second-year master's student" },
+          "id": "陳柏均",
+          "name": "陳柏均",
+          "since": 2024,
           "focus": [
-            { "zh": "基準測試", "en": "Benchmarking" },
-            { "zh": "可重現性工具", "en": "Reproducibility tooling" }
+            "IC Design flow",
+            "Verilog",
+            "EDA tools"
           ],
-          "work": {
-            "zh": "維護實驗室的開源量測套件 edgebench，處理不同裝置上時脈與溫度造成的量測漂移。",
-            "en": "Maintains edgebench, the lab's open measurement suite, and handles the clock and thermal drift that makes device numbers disagree."
-          },
-          "email": "clwu@example.edu.tw",
-          "links": [{ "label": "GitHub", "href": "https://github.com/example-lab" }]
-        },
-        {
-          "id": "kuan-ting-yeh",
-          "name": { "zh": "葉冠廷", "en": "Kuan-Ting Yeh" },
-          "role": { "zh": "碩士班二年級", "en": "Second-year master's student" },
-          "focus": [
-            { "zh": "NPU 核心最佳化", "en": "NPU kernel optimisation" },
-            { "zh": "記憶體階層", "en": "Memory hierarchy" }
-          ],
-          "work": {
-            "zh": "手寫與自動產生的卷積核心比較，目標是讓自動排程器產生的程式在特定 NPU 上追上人工調校的版本。",
-            "en": "Compares hand-written and generated convolution kernels, aiming to close the gap between an auto-scheduler's output and hand tuning on one NPU."
-          },
-          "email": "ktyeh@example.edu.tw",
+          "work": "LLM-based hardware design automation",
           "links": []
         },
         {
-          "id": "shu-fen-liao",
-          "name": { "zh": "廖淑芬", "en": "Shu-Fen Liao" },
-          "role": { "zh": "碩士班一年級", "en": "First-year master's student" },
+          "id": "葉承憲",
+          "name": "葉承憲",
+          "since": 2024,
           "focus": [
-            { "zh": "模型壓縮", "en": "Model compression" },
-            { "zh": "結構化剪枝", "en": "Structured pruning" }
+            "LLM quantization",
+            "GPU kernel implementation"
           ],
-          "work": {
-            "zh": "研究剪枝後的稀疏結構要長成什麼樣子，硬體才真的省得到時間，而不只是參數量變少。",
-            "en": "Studies which sparsity structures a pruned model must land on for the hardware to actually save time, rather than only saving parameters."
-          },
-          "email": "sfliao@example.edu.tw",
+          "work": "LLM quantization and acceleration",
           "links": []
         },
         {
-          "id": "jui-hao-peng",
-          "name": { "zh": "彭睿豪", "en": "Jui-Hao Peng" },
-          "role": { "zh": "碩士班一年級", "en": "First-year master's student" },
-          "focus": [
-            { "zh": "工廠視覺檢測", "en": "Factory visual inspection" },
-            { "zh": "資料漂移", "en": "Data drift" }
-          ],
-          "work": {
-            "zh": "與產線合作，處理部署後的資料漂移：模型上線三個月後為什麼開始誤判，以及要多久重新校正一次。",
-            "en": "Works on a production line with post-deployment drift: why a model starts misjudging three months in, and how often it has to be recalibrated."
+          "id": "陳建嘉",
+          "name": {
+            "zh": "陳建嘉",
+            "en": "Jian-Jia Chen"
           },
-          "email": "jhpeng@example.edu.tw",
+          "since": 2024,
+          "focus": [
+            "Speculative decoding",
+            "kv cache compression",
+            "quantization"
+          ],
+          "work": "Speculative decoding, kv cache compression, quantization",
+          "links": [],
+          "aliases": [
+            "JJ Chen"
+          ]
+        },
+        {
+          "id": "李文弘",
+          "name": {
+            "zh": "李文弘",
+            "en": "Wen-Hung Lee"
+          },
+          "since": 2024,
+          "focus": [
+            "Speculative decoding",
+            "kv cache compression",
+            "quantization"
+          ],
+          "work": "Speculative decoding, kv cache compression, quantization",
+          "links": [],
+          "aliases": [
+            "WenHung Lee",
+            "WH Lee"
+          ]
+        },
+        {
+          "id": "邵筱庭",
+          "name": "邵筱庭",
+          "since": 2024,
+          "focus": [
+            "KV-Cache Compression",
+            "Low Rank Decomposition",
+            "Quantization",
+            "Parameter-Efficient Fine-Tuning"
+          ],
+          "work": "KV-Cache Compression",
+          "links": []
+        },
+        {
+          "id": "楊竣喆",
+          "name": {
+            "zh": "楊竣喆",
+            "en": "Chun-Che Yang"
+          },
+          "since": 2024,
+          "focus": [
+            "Speculative Decoding",
+            "Model Compression"
+          ],
+          "work": "Speculative Decoding, MoE",
+          "links": [],
+          "aliases": [
+            "CC Yang"
+          ]
+        },
+        {
+          "id": "詹松霖",
+          "name": "詹松霖",
+          "since": 2025,
+          "focus": [
+            "Serving Frameworks",
+            "GPU Kernels",
+            "Quantization"
+          ],
+          "work": "Efficient Deep Learning Inference",
+          "links": []
+        },
+        {
+          "id": "郭冠德",
+          "name": "郭冠德",
+          "since": 2025,
+          "focus": [
+            "Speculative decoding",
+            "kv cache compression",
+            "quantization"
+          ],
+          "work": "Speculative decoding, kv cache compression, quantization",
+          "links": []
+        },
+        {
+          "id": "郭浩雲",
+          "name": "郭浩雲",
+          "since": 2025,
+          "work": "Speculative decoding",
+          "links": []
+        },
+        {
+          "id": "黃咸誠",
+          "name": "黃咸誠",
+          "since": 2025,
+          "focus": [
+            "Speculative decoding",
+            "large scale software development"
+          ],
+          "links": []
+        },
+        {
+          "id": "陳垣皓",
+          "name": "陳垣皓",
+          "since": 2025,
+          "links": []
+        },
+        {
+          "id": "陳柏宇",
+          "name": "陳柏宇",
+          "since": 2026,
+          "links": []
+        },
+        {
+          "id": "趙堉安",
+          "name": "趙堉安",
+          "since": 2026,
+          "links": []
+        },
+        {
+          "id": "葉哲睿",
+          "name": "葉哲睿",
+          "since": 2026,
+          "work": "kv cache compression",
+          "links": []
+        },
+        {
+          "id": "林庠安",
+          "name": "林庠安",
+          "since": 2026,
+          "links": []
+        },
+        {
+          "id": "李湧安",
+          "name": "李湧安",
+          "since": 2026,
+          "links": []
+        },
+        {
+          "id": "鐘邦郡",
+          "name": "鐘邦郡",
+          "since": 2026,
+          "focus": [
+            "Low Rank Decomposition",
+            "Quantization"
+          ],
+          "work": "LLM Quantization, KV-Cache Compression, MoE",
           "links": []
         }
       ]
     },
     {
       "id": "undergrad",
-      "label": { "zh": "大學部專題生", "en": "Undergraduate researchers" },
-      "members": [
-        {
-          "id": "hsin-yu-lai",
-          "name": { "zh": "賴心妤", "en": "Hsin-Yu Lai" },
-          "role": { "zh": "大學部四年級　專題", "en": "Fourth-year undergraduate" },
-          "focus": [
-            { "zh": "量測自動化", "en": "Measurement automation" },
-            { "zh": "Python 工具", "en": "Python tooling" }
-          ],
-          "work": {
-            "zh": "把實驗室的測試流程接上 CI，讓每次提交都自動在三台裝置上重跑一次基準測試。",
-            "en": "Wired the lab's test flow into CI so every commit reruns the benchmark on three devices."
-          },
-          "links": []
-        },
-        {
-          "id": "tzu-chieh-hung",
-          "name": { "zh": "洪子傑", "en": "Tzu-Chieh Hung" },
-          "role": { "zh": "大學部四年級　專題", "en": "Fourth-year undergraduate" },
-          "focus": [
-            { "zh": "Android 部署", "en": "Android deployment" },
-            { "zh": "效能剖析", "en": "Profiling" }
-          ],
-          "work": {
-            "zh": "在中階手機上比較三種推論框架的實際延遲，整理成一份給實驗室內部參考的選型報告。",
-            "en": "Compares real latency across three inference runtimes on mid-range phones, written up as the lab's internal guide to picking one."
-          },
-          "links": []
-        },
-        {
-          "id": "yu-chen-fang",
-          "name": { "zh": "方宇辰", "en": "Yu-Chen Fang" },
-          "role": { "zh": "大學部三年級　專題", "en": "Third-year undergraduate" },
-          "focus": [
-            { "zh": "資料視覺化", "en": "Data visualisation" },
-            { "zh": "實驗紀錄", "en": "Experiment tracking" }
-          ],
-          "work": {
-            "zh": "做實驗室的結果看板，把散在各人筆電裡的實驗紀錄收成一個可以查詢的地方。",
-            "en": "Builds the lab's results dashboard, collecting experiment logs scattered across laptops into one place you can query."
-          },
-          "links": []
-        }
-      ]
+      "label": {
+        "zh": "大學部專題生",
+        "en": "Undergraduate researchers"
+      },
+      "members": []
     }
   ],
-
   "alumni": [
     {
-      "id": "cheng-hao-shih",
-      "name": { "zh": "施承澔", "en": "Cheng-Hao Shih" },
-      "degree": { "zh": "博士", "en": "PhD" },
-      "year": 2025,
-      "thesis": {
-        "zh": "邊緣推論的記憶體階層感知編譯",
-        "en": "Memory-hierarchy-aware compilation for edge inference"
+      "name": "黃朝陽",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
       },
-      "now": { "org": "MediaTek", "role": { "zh": "資深編譯器工程師", "en": "Senior compiler engineer" }, "href": "" }
+      "since": 2014,
+      "year": 2016,
+      "research": "Cost-effective in-field aging repair/resilience/revival",
+      "focus": [
+        "Constrained Boolean satisfiability (SAT) based on sequential counters"
+      ],
+      "now": {
+        "org": {
+          "zh": "新思科技",
+          "en": "Synopsys"
+        }
+      }
     },
     {
-      "id": "yi-ting-chang",
-      "name": { "zh": "張怡庭", "en": "Yi-Ting Chang" },
-      "degree": { "zh": "博士", "en": "PhD" },
+      "name": "蔡長霖",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2014,
+      "year": 2016,
+      "research": "Reliability-driven optimization for variable-latency designs",
+      "focus": [
+        "Particle swarm optimization (PSO)"
+      ],
+      "now": {
+        "org": {
+          "zh": "聯發科技",
+          "en": "MediaTek"
+        }
+      }
+    },
+    {
+      "name": "汪述聖",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2014,
+      "year": 2016,
+      "research": "Security-aware clock network design, hardware Trojan horses",
+      "focus": [
+        "Boolean satisfiability (SAT)",
+        "regression analysis"
+      ],
+      "now": {
+        "org": {
+          "zh": "益華電腦",
+          "en": "Cadence"
+        }
+      }
+    },
+    {
+      "name": "俞光隆",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2014,
+      "year": 2017,
+      "research": "Reliability-driven optimization for variable-latency designs",
+      "focus": [
+        "Genetic algorithm (GA)"
+      ],
+      "now": {
+        "org": "大猩猩科技"
+      }
+    },
+    {
+      "name": "張皓淳",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2015,
+      "year": 2017,
+      "research": "Cost-effective in-field aging repair/resilience/revival",
+      "focus": [
+        "Minimum set cover",
+        "exact cover"
+      ],
+      "now": {
+        "org": {
+          "zh": "益華電腦",
+          "en": "Cadence"
+        }
+      }
+    },
+    {
+      "name": "林淯晨",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2015,
+      "year": 2017,
+      "research": "Security-aware power network design",
+      "focus": [
+        "Graph connectivity analysis"
+      ],
+      "now": {
+        "org": {
+          "zh": "群暉科技",
+          "en": "Synology"
+        }
+      }
+    },
+    {
+      "name": {
+        "zh": "陳思穎",
+        "en": "Szu-Ying Chen"
+      },
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2015,
+      "year": 2017,
+      "research": "Acceleration of error-tolerant applications",
+      "focus": [
+        "Approximate computing"
+      ],
+      "now": {
+        "org": {
+          "zh": "新思科技",
+          "en": "Synopsys"
+        }
+      },
+      "aliases": [
+        "SY Chen"
+      ]
+    },
+    {
+      "name": "鄭昭尉",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2015,
+      "year": 2018,
+      "research": "Reliability-driven optimization for variable-latency designs",
+      "focus": [
+        "Monte-Carlo simulation"
+      ],
+      "now": {
+        "org": {
+          "zh": "聯發科技",
+          "en": "MediaTek"
+        }
+      }
+    },
+    {
+      "name": "潘儀芳",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2016,
+      "year": 2018,
+      "research": "Security-aware power network design",
+      "focus": [
+        "Graph connectivity analysis"
+      ],
+      "now": {
+        "org": {
+          "zh": "新思科技",
+          "en": "Synopsys"
+        }
+      }
+    },
+    {
+      "name": "曾天鴻",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2016,
+      "year": 2018,
+      "research": "Making aging useful intentionally, hardware Trojan horses",
+      "focus": [
+        "Boolean satisfiability (SAT)",
+        "Monte-Carlo simulation"
+      ],
+      "now": {
+        "org": {
+          "zh": "聯發科技",
+          "en": "MediaTek"
+        }
+      }
+    },
+    {
+      "name": "陳建佑",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2016,
+      "year": 2019,
+      "research": "Detection of hardware Trojan horses",
+      "focus": [
+        "Machine learning"
+      ]
+    },
+    {
+      "name": "蔡佳旅",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2017,
+      "year": 2019,
+      "research": "Security-aware approximate computing",
+      "focus": [
+        "Logic encryption/decryption"
+      ],
+      "now": {
+        "org": {
+          "zh": "益華電腦",
+          "en": "Cadence"
+        }
+      }
+    },
+    {
+      "name": "陳均騰",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2017,
+      "year": 2019,
+      "research": "Outlier identification from the aspect of IC testing",
+      "focus": [
+        "Deep learning",
+        "stochastic regression"
+      ],
+      "now": {
+        "org": {
+          "zh": "瑞昱半導體",
+          "en": "Realtek"
+        }
+      }
+    },
+    {
+      "name": "黃礪鞍",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2017,
+      "year": 2019,
+      "research": "Cost-effective in-field aging repair/resilience/revival",
+      "focus": [
+        "Maximum satisfiability (MAX-SAT)"
+      ],
+      "now": {
+        "org": {
+          "zh": "聯發科技",
+          "en": "MediaTek"
+        }
+      }
+    },
+    {
+      "name": {
+        "zh": "曾威凱",
+        "en": "Wei-Kai Tseng"
+      },
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2017,
+      "year": 2020,
+      "research": "Acceleration of deep-learning applications",
+      "focus": [
+        "Approximate computing"
+      ],
+      "now": {
+        "org": "ArrayNetworks"
+      },
+      "aliases": [
+        "WK Tseng"
+      ]
+    },
+    {
+      "name": {
+        "zh": "周煥然",
+        "en": "Huan-Jan Chou"
+      },
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2018,
+      "year": 2020,
+      "research": "Acceleration of deep-learning applications",
+      "focus": [
+        "Approximate computing"
+      ],
+      "now": {
+        "org": {
+          "zh": "創鑫智慧",
+          "en": "NEUCHIPS"
+        }
+      },
+      "aliases": [
+        "HJ Chou"
+      ]
+    },
+    {
+      "name": "楊承浩",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2018,
+      "year": 2020,
+      "research": "Outlier identification from the aspect of IC testing",
+      "focus": [
+        "Neural Networks"
+      ],
+      "now": {
+        "org": {
+          "zh": "聯發科技",
+          "en": "MediaTek"
+        }
+      }
+    },
+    {
+      "name": "柯劭函",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2018,
+      "year": 2020,
+      "research": "Reservoir-Computing-Based Simulation System",
+      "focus": [
+        "Reservoir Computing",
+        "Artificial Synaptic Device"
+      ]
+    },
+    {
+      "name": "蔡榮哲",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2019,
+      "year": 2021,
+      "research": "Detection of Hardware Trojan",
+      "focus": [
+        "Support Vector Machine",
+        "Random Forest",
+        "Path Feature"
+      ],
+      "now": {
+        "org": {
+          "zh": "新思科技",
+          "en": "Synopsys"
+        }
+      }
+    },
+    {
+      "name": "劉嘉翔",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2019,
+      "year": 2021,
+      "research": "Neural Architecture Search",
+      "focus": [
+        "Neural Architecture Search"
+      ],
+      "now": {
+        "org": {
+          "zh": "聯發科技",
+          "en": "MediaTek"
+        }
+      }
+    },
+    {
+      "name": "許賀傑",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2019,
+      "year": 2021,
+      "research": "System testing and Fault diagnosis",
+      "focus": [
+        "Unsupervised learning",
+        "Clustering"
+      ],
+      "now": {
+        "org": {
+          "zh": "新思科技",
+          "en": "Synopsys"
+        }
+      }
+    },
+    {
+      "name": "邱劭威",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2019,
+      "year": 2022,
+      "research": "Federated-Split Learning",
+      "focus": [
+        "Federated learning",
+        "Secure multi-party computation",
+        "Data privacy"
+      ]
+    },
+    {
+      "name": "李 易",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2020,
+      "year": 2022,
+      "research": "Model Compression for MLP Models",
+      "focus": [
+        "Low-rank approximation"
+      ],
+      "now": {
+        "org": {
+          "zh": "聯發科技",
+          "en": "MediaTek"
+        }
+      }
+    },
+    {
+      "name": {
+        "zh": "楊旻學",
+        "en": "Min-Syue Yang"
+      },
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2019,
+      "year": 2022,
+      "research": "Fault Mitigation Methodology for AI Accelerators",
+      "focus": [
+        "Fault Mitigation"
+      ],
+      "aliases": [
+        "MS Yang"
+      ]
+    },
+    {
+      "name": "陳柏翰",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2020,
+      "year": 2022,
+      "research": "MultiLayer Perceptrons (MLP) Optimization",
+      "focus": [
+        "Layer Fusion"
+      ],
+      "now": {
+        "org": {
+          "zh": "創鑫智慧",
+          "en": "NEUCHIPS"
+        }
+      }
+    },
+    {
+      "name": "劉慶珉",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2020,
+      "year": 2022,
+      "research": "Outlier identification from the aspect of IC testing",
+      "focus": [
+        "wafer-level defect pattern",
+        "latent defect detection",
+        "neural networks"
+      ],
+      "now": {
+        "org": {
+          "zh": "聯發科技",
+          "en": "MediaTek"
+        }
+      }
+    },
+    {
+      "name": "宋元堯",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2020,
+      "year": 2022,
+      "research": "Low-Rank Vision Transformer",
+      "focus": [
+        "Naural Architecture Search",
+        "Low-Rank Approximation"
+      ],
+      "now": {
+        "org": {
+          "zh": "木刻思",
+          "en": "iiNumbers"
+        }
+      }
+    },
+    {
+      "name": "王廷睿",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2020,
       "year": 2023,
-      "thesis": {
-        "zh": "異質 SoC 上的即時推論排程",
-        "en": "Real-time inference scheduling on heterogeneous SoCs"
-      },
-      "now": { "org": "NVIDIA", "role": { "zh": "系統軟體工程師", "en": "System software engineer" }, "href": "" }
+      "research": "Outlier identification from the aspect of IC testing",
+      "focus": [
+        "Multilayer Perceptron",
+        "Neural Networks"
+      ]
     },
     {
-      "id": "po-wei-chiu",
-      "name": { "zh": "邱柏維", "en": "Po-Wei Chiu" },
-      "degree": { "zh": "碩士", "en": "MS" },
-      "year": 2025,
-      "thesis": {
-        "zh": "低位元量化在語音模型上的誤差傳播",
-        "en": "Error propagation of low-bit quantisation in speech models"
+      "name": "楊皕翔",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
       },
-      "now": { "org": "TSMC", "role": { "zh": "研發替代役　資料科學", "en": "Data scientist" }, "href": "" }
-    },
-    {
-      "id": "meng-chun-liu",
-      "name": { "zh": "劉孟均", "en": "Meng-Chun Liu" },
-      "degree": { "zh": "碩士", "en": "MS" },
-      "year": 2024,
-      "thesis": {
-        "zh": "工廠檢測模型的線上校正流程",
-        "en": "Online recalibration for factory inspection models"
-      },
-      "now": { "org": "Appier", "role": { "zh": "機器學習工程師", "en": "Machine learning engineer" }, "href": "" }
-    },
-    {
-      "id": "shih-chi-huang",
-      "name": { "zh": "黃士奇", "en": "Shih-Chi Huang" },
-      "degree": { "zh": "碩士", "en": "MS" },
-      "year": 2024,
-      "thesis": {
-        "zh": "行動裝置上的聯邦學習能耗模型",
-        "en": "An energy model for federated learning on mobile devices"
-      },
-      "now": { "org": "Google", "role": { "zh": "軟體工程師", "en": "Software engineer" }, "href": "" }
-    },
-    {
-      "id": "an-chi-tsai",
-      "name": { "zh": "蔡安琪", "en": "An-Chi Tsai" },
-      "degree": { "zh": "學士", "en": "BS" },
-      "year": 2024,
-      "thesis": {
-        "zh": "大學部專題：邊緣裝置推論延遲量測工具",
-        "en": "Undergraduate project: a latency measurement tool for edge devices"
-      },
-      "now": { "org": { "zh": "卡內基美隆大學", "en": "Carnegie Mellon University" }, "role": { "zh": "碩士班就讀中", "en": "Master's student" }, "href": "" }
-    },
-    {
-      "id": "wen-hsuan-ko",
-      "name": { "zh": "柯玟璇", "en": "Wen-Hsuan Ko" },
-      "degree": { "zh": "學士", "en": "BS" },
+      "since": 2021,
       "year": 2023,
-      "thesis": {
-        "zh": "大學部專題：模型壓縮對電池續航的影響",
-        "en": "Undergraduate project: how compression changes battery life"
+      "research": "Mapping and Routing of Network on Chio",
+      "focus": [
+        "Hungarian algorithm"
+      ],
+      "now": {
+        "org": {
+          "zh": "創鑫智慧",
+          "en": "NEUCHIPS"
+        }
+      }
+    },
+    {
+      "name": "蕭宇辰",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
       },
-      "now": { "org": "Synology", "role": { "zh": "軟體工程師", "en": "Software engineer" }, "href": "" }
+      "since": 2021,
+      "year": 2023,
+      "research": "Detection of Hardware Torjan",
+      "focus": [
+        "Graph Convolutional Neural Network",
+        "Graph Attention Network"
+      ]
+    },
+    {
+      "name": "呂承哲",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2021,
+      "year": 2023,
+      "research": "Outlier identification from the aspect of IC testing",
+      "focus": [
+        "Transformer-based Deep learning model"
+      ],
+      "now": {
+        "org": {
+          "zh": "聯詠科技",
+          "en": "Novatek"
+        }
+      }
+    },
+    {
+      "name": {
+        "zh": "林瑋晟",
+        "en": "Wei-Cheng Lin"
+      },
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2022,
+      "year": 2024,
+      "research": "KV-Cache Compression for Large Language Models, Semi-Structured Sparse Vision Transformer",
+      "focus": [
+        "Low-Rank Decomposition",
+        "Quantization",
+        "N:M Sparsity"
+      ],
+      "now": {
+        "org": "SiFive"
+      }
+    },
+    {
+      "name": "李淑汶",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2022,
+      "year": 2024,
+      "research": "Outlier identification from the aspect of IC testing",
+      "focus": [
+        "MetaFormer Variant Neural Network"
+      ],
+      "now": {
+        "org": {
+          "zh": "台積電",
+          "en": "TSMC"
+        }
+      }
+    },
+    {
+      "name": "劉紘華",
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2022,
+      "year": 2024,
+      "research": "Split-Federated Learning",
+      "focus": [
+        "Model Inversion Attack",
+        "Low-Rank Adaptation"
+      ],
+      "now": {
+        "org": {
+          "zh": "瑞昱半導體",
+          "en": "Realtek"
+        }
+      }
+    },
+    {
+      "name": {
+        "zh": "陳芷羚",
+        "en": "Chih-Ling Chen"
+      },
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2022,
+      "year": 2024,
+      "research": "Efficient On-Device Learning",
+      "focus": [
+        "Model Compression",
+        "Rematerialization",
+        "Neural Architecture Search"
+      ],
+      "now": {
+        "org": {
+          "zh": "益華電腦",
+          "en": "Cadence"
+        }
+      },
+      "aliases": [
+        "CL Chen"
+      ]
+    },
+    {
+      "name": {
+        "zh": "胡雨芳",
+        "en": "Yu-Fang Hu"
+      },
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2022,
+      "year": 2024,
+      "research": "Model Compression for Large Language Models",
+      "focus": [
+        "Low-Rank Approximation",
+        "Singular Value Decomposition",
+        "Convex Optimization"
+      ],
+      "now": {
+        "org": "Skymizer"
+      },
+      "aliases": [
+        "YF Hu"
+      ]
+    },
+    {
+      "name": {
+        "zh": "王培碩",
+        "en": "Pei-Shuo Wang"
+      },
+      "degree": {
+        "zh": "碩士",
+        "en": "MS"
+      },
+      "since": 2023,
+      "year": 2026,
+      "research": "Acceleration for the Inference of Offloaded Large Language Models",
+      "focus": [
+        "Speculative Decoding",
+        "quantization"
+      ],
+      "now": {
+        "org": "UT Austin",
+        "role": {
+          "zh": "博士生",
+          "en": "PhD student"
+        }
+      },
+      "aliases": [
+        "PS Wang"
+      ]
+    },
+    {
+      "name": {
+        "zh": "黃寗琪",
+        "en": "Ning-Chi Huang"
+      },
+      "degree": {
+        "zh": "博士",
+        "en": "PhD"
+      },
+      "since": 2017,
+      "year": 2021,
+      "research": "AI computing platform design, variable-latency design convergence (analysis and optimization)",
+      "focus": [
+        "Approximate computing",
+        "performance/reliability analysis based on graph traversal"
+      ],
+      "now": {
+        "org": {
+          "zh": "成大電機",
+          "en": "NCKU EE"
+        }
+      },
+      "aliases": [
+        "NC Huang"
+      ]
+    },
+    {
+      "name": "顏家珩",
+      "degree": {
+        "zh": "博士",
+        "en": "PhD"
+      },
+      "since": 2019,
+      "year": 2024,
+      "research": "Outlier identification from the aspect of IC testing",
+      "focus": [
+        "Stochastic regression",
+        "machine learning",
+        "deep learning"
+      ],
+      "now": {
+        "org": {
+          "zh": "海大資工",
+          "en": "NTOU CS"
+        }
+      }
+    },
+    {
+      "name": "Tien-Yu Chi",
+      "degree": {
+        "zh": "研究助理",
+        "en": "Research assistant"
+      },
+      "aliases": [
+        "TY Chi"
+      ]
+    },
+    {
+      "name": "Yi-Ting Li",
+      "degree": {
+        "zh": "研究助理",
+        "en": "Research assistant"
+      }
+    },
+    {
+      "name": {
+        "zh": "張機智",
+        "en": "Chi-Chih Chang"
+      },
+      "since": 2022,
+      "year": 2024,
+      "research": "Low-Rank Vision Transformer, Semi-Structured Sparse Vision Transformer",
+      "focus": [
+        "Naural Architecture Search",
+        "Low-Rank Approximation",
+        "N:M Sparsity"
+      ],
+      "now": {
+        "org": "Cornell",
+        "role": {
+          "zh": "博士生",
+          "en": "PhD student"
+        }
+      },
+      "aliases": [
+        "CC Chang"
+      ]
+    },
+    {
+      "name": "陳重諺"
     }
   ]
 }

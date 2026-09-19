@@ -1,122 +1,174 @@
 {
   "lab": {
-    "short": "EISL",
+    "short": "Edge AI",
     "name": {
-      "zh": "邊緣智慧系統實驗室",
-      "en": "Edge Intelligence Systems Lab"
+      "zh": "邊緣人工智慧實驗室",
+      "en": "Edge AI Lab"
     },
     "institution": {
-      "zh": "國立範例大學　資訊工程學系",
-      "en": "Department of Computer Science, Example University"
+      "zh": "國立陽明交通大學　資訊工程學系",
+      "en": "Department of Computer Science, National Yang Ming Chiao Tung University"
     },
     "statement": {
-      "zh": "我們研究機器學習模型離開資料中心之後會發生什麼事。從編譯器、排程器到量測方法，把模型放到手機、車機與工廠設備上時壞掉的每一層，我們都拆開來看。",
-      "en": "We study what happens to machine learning models after they leave the data centre. Compilers, schedulers, measurement — we take apart every layer that breaks when a model has to run on a phone, a vehicle, or a factory sensor."
+      "zh": "我們讓大型模型在資源有限的硬體上跑得動。從 KV-Cache 壓縮、低秩分解、推測解碼到稀疏加速器設計，處理的是同一件事：把模型的計算與記憶體需求，壓到裝置真正負擔得起的範圍。",
+      "en": "We make large models run on hardware that cannot afford them. KV-cache compression, low-rank projection, speculative decoding, sparse accelerator design — all of it works on one problem: bringing a model's compute and memory down to what a device can actually carry."
     },
     "contact": {
-      "email": "eisl@example.edu.tw",
-      "phone": "+886 2 0000 0000 #1234",
+      "email": "",
+      "phone": "",
       "office": {
-        "zh": "資訊工程館 7 樓 705 室",
-        "en": "Room 705, CS Building"
+        "zh": "",
+        "en": ""
       },
       "address": {
-        "zh": "臺北市範例區範例路 1 號",
-        "en": "No. 1, Example Rd., Taipei, Taiwan"
+        "zh": "新竹市東區大學路 1001 號",
+        "en": "1001 University Road, Hsinchu, Taiwan"
       }
     },
     "links": [
-      { "label": { "zh": "GitHub", "en": "GitHub" }, "href": "https://github.com/example-lab", "text": "example-lab" },
-      { "label": { "zh": "系所網頁", "en": "Department" }, "href": "https://cs.example.edu.tw", "text": "cs.example.edu.tw" }
+      {
+        "label": {
+          "zh": "系所網頁",
+          "en": "Department"
+        },
+        "href": "https://www.cs.nycu.edu.tw/",
+        "text": "cs.nycu.edu.tw"
+      }
     ]
   },
-
   "pi": {
     "id": "pi",
-    "name": { "zh": "林彥廷", "en": "Yen-Ting Lin" },
-    "title": { "zh": "教授　實驗室主持人", "en": "Professor and principal investigator" },
-    "photo": "",
-    "email": "ytlin@example.edu.tw",
-    "office": { "zh": "資訊工程館 703 室", "en": "Room 703, CS Building" },
-    "links": [
-      { "label": { "zh": "Google Scholar", "en": "Google Scholar" }, "href": "https://scholar.google.com/citations?user=EXAMPLE", "text": "scholar.google.com" },
-      { "label": { "zh": "個人網頁", "en": "Homepage" }, "href": "https://example.edu.tw/~ytlin", "text": "example.edu.tw/~ytlin" }
+    "name": {
+      "zh": "吳凱強",
+      "en": "Kai-Chiang Wu"
+    },
+    "aliases": [
+      "KC Wu",
+      "Kai-Chiang Wu"
     ],
+    "title": {
+      "zh": "教授　實驗室主持人",
+      "en": "Professor and principal investigator"
+    },
+    "photo": "img/pi.jpg",
+    "email": "",
+    "office": {
+      "zh": "",
+      "en": ""
+    },
+    "links": [],
     "bio": {
       "zh": [
-        "林彥廷的研究從一個反覆出現的落差開始：論文裡的模型在 A100 上跑得漂亮，搬到量產裝置上卻慢了三十倍，而且沒有人說得清楚慢在哪一層。這個實驗室的工作，就是把那三十倍拆解成可以量測、可以修的東西。",
-        "研究方法偏向系統：先做出可重現的量測，再往上改編譯器與排程器，最後才談演算法。實驗室與國內半導體與車用電子廠商長期合作，學生做的題目通常有一台真的機器在等著跑。",
-        "教授大學部「計算機結構」與研究所「邊緣機器學習系統」。指導學生時的原則很簡單：先讓東西會動，再讓它有道理，最後才讓它變快。"
+        "吳凱強的研究處理同一個落差：模型的能力成長得比硬體快。實驗室的工作是把這個落差拆成可以動手的問題——一個 KV-Cache 到底需要多少記憶體、一次解碼能不能少跑幾層、加速器上的稀疏結構要長成什麼樣子，硬體才真的省得到時間。",
+        "近年的主軸是大型語言模型的推論效率：以低秩投影壓縮 KV-Cache（Palu, ICLR 2025）、以替代草稿模型加速 offloaded 推論的推測解碼（NeurIPS 2026），以及視覺模型的逐層 N:M 稀疏與低秩架構搜尋（ELSA、FLORA）。這條線延續實驗室較早的硬體路線：可分解 MAC 的收縮陣列、FPGA 上的稀疏張量單元，以及加速器的容錯設計。",
+        "實驗室與康乃爾大學、德州大學奧斯汀分校等研究群合作。畢業生多進入台灣半導體與 EDA 產業，也有人繼續攻讀博士。指導的原則很簡單：先讓量測可信，再談最佳化。"
       ],
       "en": [
-        "Yen-Ting Lin's work starts from a gap that keeps reappearing: a model that looks excellent on an A100 runs thirty times slower on the device that ships, and nobody can say which layer ate the time. This lab's job is to break that factor of thirty into things you can measure and then fix.",
-        "The approach is a systems one — build a reproducible measurement first, then change the compiler and the scheduler, and only then argue about the algorithm. The lab works with semiconductor and automotive electronics partners in Taiwan, so student projects usually have real hardware waiting for them.",
-        "Teaches Computer Architecture to undergraduates and Edge Machine Learning Systems to graduate students. The advising rule is simple: make it work, make it make sense, then make it fast."
+        "Kai-Chiang Wu's work addresses one gap: models grow more capable faster than hardware grows able to run them. The lab breaks that gap into things you can act on — how much memory a KV-cache really needs, whether a decoding step can skip layers, and which sparsity structures let an accelerator save time rather than only save parameters.",
+        "The current focus is inference efficiency for large language models: compressing the KV-cache with low-rank projection (Palu, ICLR 2025), speculative decoding with substitute drafters for offloaded inference (NeurIPS 2026), and layer-wise N:M sparsity and low-rank architecture search for vision models (ELSA, FLORA). It continues the lab's longer line of hardware work: systolic arrays built on decomposable MACs, sparse tensor units for FPGAs, and fault mitigation for accelerators.",
+        "The lab collaborates with groups at Cornell and UT Austin. Graduates go mostly into Taiwan's semiconductor and EDA industry, and several have continued to doctoral study abroad. The advising principle is simple: make the measurement trustworthy before arguing about the optimisation."
       ]
     },
     "interests": [
-      { "zh": "邊緣推論編譯器", "en": "Compilers for edge inference" },
-      { "zh": "異質硬體排程", "en": "Heterogeneous scheduling" },
-      { "zh": "系統效能量測", "en": "Performance measurement" },
-      { "zh": "裝置端隱私學習", "en": "On-device private learning" },
-      { "zh": "車用即時系統", "en": "Automotive real-time systems" }
+      {
+        "zh": "大型語言模型推論效率",
+        "en": "Efficient LLM inference"
+      },
+      {
+        "zh": "KV-Cache 壓縮",
+        "en": "KV-cache compression"
+      },
+      {
+        "zh": "推測解碼",
+        "en": "Speculative decoding"
+      },
+      {
+        "zh": "量化與低秩分解",
+        "en": "Quantisation and low-rank decomposition"
+      },
+      {
+        "zh": "稀疏 AI 加速器",
+        "en": "Sparse AI accelerators"
+      },
+      {
+        "zh": "裝置端學習",
+        "en": "On-device learning"
+      }
     ],
     "education": [
-      { "year": "2016", "detail": { "zh": "博士，資訊工程，國立範例大學", "en": "PhD in Computer Science, Example University" } },
-      { "year": "2016–2019", "detail": { "zh": "研究科學家，某半導體公司編譯器團隊", "en": "Research scientist, compiler team at a semiconductor company" } },
-      { "year": "2019–2024", "detail": { "zh": "助理教授，國立範例大學資訊工程學系", "en": "Assistant professor, Department of Computer Science, Example University" } },
-      { "year": "2024–", "detail": { "zh": "教授，國立範例大學資訊工程學系", "en": "Professor, Department of Computer Science, Example University" } }
+      {
+        "year": "",
+        "detail": {
+          "zh": "博士，卡內基美隆大學（Carnegie Mellon University）",
+          "en": "PhD, Carnegie Mellon University"
+        }
+      },
+      {
+        "year": "",
+        "detail": {
+          "zh": "教授，國立陽明交通大學 資訊工程學系",
+          "en": "Professor, Department of Computer Science, NYCU"
+        }
+      }
     ]
   },
-
   "themes": [
     {
-      "id": "compile",
-      "name": { "zh": "邊緣編譯與部署", "en": "Compiling for the edge" },
+      "id": "llm",
+      "name": {
+        "zh": "大型語言模型推論加速",
+        "en": "Efficient LLM inference"
+      },
       "summary": {
-        "zh": "把訓練好的模型翻譯成特定晶片真的跑得動的程式：算子融合、量化誤差的追蹤，以及在記憶體只有幾百 KB 時的取捨。",
-        "en": "Turning a trained model into code a specific chip can actually run: operator fusion, tracking where quantisation error accumulates, and the trade-offs when there are only a few hundred kilobytes of memory."
+        "zh": "長文本生成時，KV-Cache 與逐步解碼是兩個主要瓶頸。我們以低秩投影壓縮快取、以替代草稿模型做推測解碼，目標是在不重新訓練、不改變輸出的前提下把延遲降下來。",
+        "en": "In long-context generation the KV-cache and the decoding loop are the bottlenecks. We compress the cache with low-rank projection and speculate with substitute drafters, cutting latency without retraining and without changing what the model outputs."
       }
     },
     {
-      "id": "sched",
-      "name": { "zh": "異質資源排程", "en": "Scheduling heterogeneous hardware" },
+      "id": "compress",
+      "name": {
+        "zh": "模型壓縮與架構搜尋",
+        "en": "Compression and architecture search"
+      },
       "summary": {
-        "zh": "一顆 SoC 上同時有 CPU、GPU 與 NPU，工作該切給誰、什麼時候切，在延遲上限與功耗預算之間找可證明的答案。",
-        "en": "One SoC carries a CPU, a GPU and an NPU. Which unit gets the work, and when — with provable answers under a latency bound and a power budget."
+        "zh": "量化、低秩分解與 N:M 稀疏各能省下多少，取決於它們落在哪一層。我們把它當成逐層的配置問題：讓壓縮的代價花在模型最承受得起的地方。",
+        "en": "How much quantisation, low-rank decomposition and N:M sparsity save depends on which layer they land in. We treat it as a per-layer allocation problem: spend the error budget where the model can absorb it."
       }
     },
     {
-      "id": "measure",
-      "name": { "zh": "量測與基準方法", "en": "Measurement and benchmarks" },
+      "id": "accel",
+      "name": {
+        "zh": "AI 加速器與硬體設計",
+        "en": "AI accelerators and hardware"
+      },
       "summary": {
-        "zh": "先把數字量對。我們維護一組開源的邊緣推論基準，重點放在可重現性：同一份實驗，換一台機器仍該得到同樣的結論。",
-        "en": "Get the numbers right first. We maintain an open benchmark suite for edge inference built around reproducibility: the same experiment on another machine should still support the same conclusion."
+        "zh": "稀疏與量化只有在硬體支援時才會變成速度。我們設計可分解的 MAC、收縮陣列與 FPGA 上的稀疏張量單元，並處理加速器在近似與故障下的容錯。",
+        "en": "Sparsity and quantisation only become speed if the hardware can exploit them. We design decomposable MACs, systolic arrays and sparse tensor units for FPGAs, and handle fault mitigation when accelerators approximate or fail."
       }
     },
     {
-      "id": "privacy",
-      "name": { "zh": "裝置端隱私學習", "en": "On-device private learning" },
+      "id": "ondevice",
+      "name": {
+        "zh": "裝置端學習與部署",
+        "en": "On-device learning and deployment"
+      },
       "summary": {
-        "zh": "資料不離開裝置的前提下做模型更新，並量化「不離開」在系統層面上真正的成本：電池、頻寬與延遲。",
-        "en": "Updating models without data leaving the device, and quantifying what 'without leaving' actually costs at the system level: battery, bandwidth, latency."
+        "zh": "在記憶體受限的裝置上做訓練或微調，記憶體重算與架構搜尋必須一起設計。我們研究這兩者的取捨，以及模型部署之後如何維持。",
+        "en": "Training or fine-tuning on a memory-bound device means rematerialisation and architecture search have to be designed together. We study that trade-off, and what keeps a model working after deployment."
       }
     }
   ],
-
   "join": {
     "body": {
       "zh": [
-        "實驗室長期招收博士班、碩士班與大學部專題生。我們不要求你進來時就會編譯器或核心程式，但期待你願意把一個現象追到底——包含那些最後發現是量測腳本寫錯的夜晚。",
-        "大學部專題以一年為一期，從一個可重現的量測開始；表現合適的同學通常會延續成碩士論文題目。有興趣請寄信給主持人，附上成績單與一段你曾經除錯最久的經驗。"
+        "實驗室每年招收博士班、碩士班與大學部專題生。我們不要求你進來時就懂 CUDA 或硬體設計，但期待你願意把一個現象追到底——包含那些最後發現是量測腳本寫錯的夜晚。",
+        "大學部專題以一年為一期，從一個可重現的量測開始；做得順的同學通常會延續成碩士論文題目。有興趣請寄信給主持人，附上成績單，以及一段你曾經除錯最久的經驗。"
       ],
       "en": [
-        "The lab takes doctoral students, master's students and undergraduate project students every year. You do not need to arrive knowing compilers or kernel code, but you should be willing to chase one phenomenon to the bottom — including the nights where the answer turns out to be a bug in the measurement script.",
-        "Undergraduate projects run for one year and start from a reproducible measurement; students who take to it usually continue the topic as a master's thesis. Write to the PI with a transcript and a paragraph about the longest you have ever spent debugging something."
+        "The lab takes doctoral students, master's students and undergraduate project students every year. You do not need to arrive knowing CUDA or hardware design, but you should be willing to chase one phenomenon to the bottom — including the nights where the answer turns out to be a bug in the measurement script.",
+        "Undergraduate projects run for a year and start from a reproducible measurement; students who take to it usually continue the topic as a master's thesis. Write to the PI with a transcript and a paragraph about the longest you have ever spent debugging something."
       ]
     },
-    "cta": [
-      { "label": { "zh": "寄信給主持人", "en": "Email the PI" }, "href": "mailto:ytlin@example.edu.tw" }
-    ]
+    "cta": []
   }
 }

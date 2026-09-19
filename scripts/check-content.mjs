@@ -45,6 +45,21 @@ function checkUrl(file, path, value, { allowMailto = true } = {}) {
   if (/^javascript:/i.test(String(value))) fail(file, path, "javascript: links are not allowed");
 }
 
+const aliasOwners = new Map();
+
+/** Aliases say how a person's name is printed in an author list ("KC Wu").
+ *  Two people claiming the same alias would make author highlighting wrong. */
+function checkAliases(file, path, aliases, owner = path) {
+  arr(aliases).forEach((a, i) => {
+    if (typeof a !== "string" || !a.trim()) return fail(file, `${path}[${i}]`, "must be a name as it appears in author lists");
+    const key = a.trim().toLowerCase();
+    if (aliasOwners.has(key) && aliasOwners.get(key) !== owner) {
+      fail(file, `${path}[${i}]`, `"${a}" is also claimed by ${aliasOwners.get(key)}`);
+    }
+    aliasOwners.set(key, owner);
+  });
+}
+
 function checkLinks(file, path, links) {
   arr(links).forEach((l, i) => {
     checkLocalised(file, `${path}[${i}].label`, l.label);
@@ -89,6 +104,7 @@ if (site) {
   checkLocalised(f, "pi.name", pi.name);
   checkLocalised(f, "pi.title", pi.title);
   checkLinks(f, "pi.links", pi.links);
+  checkAliases(f, "pi.aliases", pi.aliases);
   const bio = isObj(pi.bio) ? pi.bio.zh || pi.bio.en : pi.bio;
   if (!arr(bio).length) fail(f, "pi.bio", "needs at least one paragraph");
   for (const langKey of ["zh", "en"]) {
@@ -97,7 +113,7 @@ if (site) {
     }
   }
   arr(pi.education).forEach((row, i) => {
-    if (!row.year) fail(f, `pi.education[${i}].year`, "is required");
+    if (!row.year) warn(f, `pi.education[${i}].year`, "no year, the row prints without one");
     checkLocalised(f, `pi.education[${i}].detail`, row.detail);
   });
 
@@ -141,6 +157,7 @@ if (people) {
       arr(m.focus).forEach((x, i) => checkLocalised(f, `${at}.focus[${i}]`, x));
       checkLocalised(f, `${at}.work`, m.work, { required: false });
       checkLinks(f, `${at}.links`, m.links);
+      checkAliases(f, `${at}.aliases`, m.aliases, m.id || at);
       if (m.email && !/^[^@\s]+@[^@\s]+$/.test(m.email)) fail(f, `${at}.email`, `"${m.email}" is not an email address`);
       for (const n of nameStrings(m.name)) names.add(n);
     });
@@ -153,9 +170,15 @@ if (people) {
       ids.add(a.id);
     }
     checkLocalised(f, `${at}.name`, a.name);
-    checkLocalised(f, `${at}.degree`, a.degree);
-    if (!/^\d{4}$/.test(String(a.year ?? ""))) fail(f, `${at}.year`, "must be a four-digit year");
-    checkLocalised(f, `${at}.thesis`, a.thesis, { required: false });
+    checkLocalised(f, `${at}.degree`, a.degree, { required: false });
+    if (!a.degree) warn(f, `${at}.degree`, "no degree recorded");
+    for (const key of ["year", "since"]) {
+      if (a[key] == null || a[key] === "") continue;
+      if (!/^\d{4}$/.test(String(a[key]))) fail(f, `${at}.${key}`, "must be a four-digit year");
+    }
+    if (a.year == null) warn(f, `${at}.year`, "no year recorded, this row sorts last");
+    checkLocalised(f, `${at}.research`, a.research, { required: false });
+    checkAliases(f, `${at}.aliases`, a.aliases, a.id || at);
     if (!a.now?.org) warn(f, `${at}.now.org`, "no current organisation — the Now column will be blank");
     else checkLocalised(f, `${at}.now.org`, a.now.org);
     checkLocalised(f, `${at}.now.role`, a.now?.role, { required: false });
@@ -183,8 +206,17 @@ if (pubs) {
     else if (seen.has(p.id)) fail(f, `${at}.id`, `"${p.id}" is used twice`);
     else seen.add(p.id);
     checkLocalised(f, `${at}.title`, p.title);
-    checkLocalised(f, `${at}.venue`, p.venue);
-    if (!/^\d{4}$/.test(String(p.year ?? ""))) fail(f, `${at}.year`, "must be a four-digit year");
+    // A manuscript with no venue yet is a legitimate state.
+    checkLocalised(f, `${at}.venue`, p.venue, { required: p.status !== "manuscript" });
+    const STATUS = ["toappear", "manuscript"];
+    if (p.status && !STATUS.includes(p.status)) {
+      fail(f, `${at}.status`, `must be one of ${STATUS.join(", ")}`);
+    }
+    if (p.year == null || p.year === "") {
+      if (!p.status) fail(f, `${at}.year`, `is required unless status is one of ${STATUS.join(", ")}`);
+    } else if (!/^\d{4}$/.test(String(p.year))) {
+      fail(f, `${at}.year`, "must be a four-digit year");
+    }
     if (!arr(p.authors).length) fail(f, `${at}.authors`, "needs at least one author");
     arr(p.themes).forEach((th, ti) => {
       if (themeIds.size && !themeIds.has(th)) {

@@ -54,6 +54,8 @@ async function loadContent(source) {
   ]);
 
   const data = { site, people, publications, blog };
+  // Photos live in content/ too, so they follow whichever source is in use.
+  data.asset = (path) => source.url(path);
   data.blog.posts = list(blog.posts)
     .map((p) => ({ ...p, authorName: authorName(p.author, data) }))
     .sort((a, b) => String(b.date).localeCompare(String(a.date)));

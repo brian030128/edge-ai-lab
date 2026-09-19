@@ -1,145 +1,265 @@
 {
   "items": [
     {
-      "id": "aspl26-budget",
-      "year": 2026,
+      "id": "palu-iclr25",
+      "year": 2025,
       "type": "conference",
-      "title": "Per-layer error budgets beat uniform bit widths for edge inference",
-      "authors": ["Pin-Hsuan Chen", "Wei-Chen Hsu", "Yen-Ting Lin"],
-      "venue": "ASPLOS 2026 — 31st International Conference on Architectural Support for Programming Languages and Operating Systems",
-      "themes": ["compile"],
-      "award": { "zh": "最佳論文", "en": "Best Paper" },
+      "title": "Palu: KV-cache compression with low-rank projection",
+      "authors": [
+        "Chi-Chih Chang",
+        "Wei-Cheng Lin",
+        "Chien-Yu Lin",
+        "Chong-Yan Chen",
+        "Yu-Fang Hu",
+        "Pei-Shuo Wang",
+        "Ning-Chi Huang",
+        "Luis Ceze",
+        "Mohamed Abdelfattah",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "International Conference on Learning Representations (ICLR) 2025, 50222–50249",
+      "themes": [
+        "llm",
+        "compress"
+      ],
       "links": [
-        { "label": "PDF", "href": "https://example.org/papers/aspl26-budget.pdf" },
-        { "label": { "zh": "程式碼", "en": "Code" }, "href": "https://github.com/example-lab" },
-        { "label": "DOI", "href": "https://doi.org/10.0000/example.2026.1" }
+        {
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2407.21118"
+        }
       ]
     },
     {
-      "id": "rtss26-deadline",
+      "id": "speculate-deep-neurips26",
       "year": 2026,
       "type": "conference",
-      "title": "Deadline-safe co-residency of perception models on automotive SoCs",
-      "authors": ["Che-Wei Tang", "Yi-Ting Chang", "Yen-Ting Lin"],
-      "venue": "RTSS 2026 — IEEE Real-Time Systems Symposium",
-      "themes": ["sched"],
-      "links": [
-        { "label": "PDF", "href": "https://example.org/papers/rtss26-deadline.pdf" },
-        { "label": "DOI", "href": "https://doi.org/10.0000/example.2026.2" }
-      ]
+      "title": "Speculate Deep and Accurate: Lossless and Training-Free Acceleration for Offloaded LLMs via Substitute Speculative Decoding",
+      "authors": [
+        "Pei-Shuo Wang",
+        "Jian-Jia Chen",
+        "Chun-Che Yang",
+        "Chi-Chih Chang",
+        "Ning-Chi Huang",
+        "Mohamed Abdelfattah",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "Advances in Neural Information Processing Systems (NeurIPS) 38, 54334–54357",
+      "themes": [
+        "llm"
+      ],
+      "links": []
     },
     {
-      "id": "arxiv26-drift",
+      "id": "dustin-2026",
       "year": 2026,
       "type": "preprint",
-      "title": "Three months in: measuring drift in deployed factory inspection models",
-      "authors": ["Jui-Hao Peng", "Meng-Chun Liu", "Yen-Ting Lin"],
-      "venue": "arXiv preprint",
-      "themes": ["measure"],
+      "title": "Dustin: Draft-Augmented Sparse Verification for Efficient Long-Context Generation with Speculative Decoding",
+      "authors": [
+        "Wen-Hung Lee",
+        "Jian-Jia Chen",
+        "Xiaolin Lin",
+        "Pei-Shuo Wang",
+        "Chi-Chih Chang",
+        "Chun-Che Yang",
+        "Ning-Chi Huang",
+        "Grace Li Zhang",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "arXiv preprint arXiv:2606.24957",
+      "themes": [
+        "llm"
+      ],
       "links": [
-        { "label": "arXiv", "href": "https://arxiv.org/abs/0000.00000" }
+        {
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2606.24957"
+        }
       ]
     },
     {
-      "id": "mlsys25-edgebench",
+      "id": "shadowspec",
+      "status": "toappear",
+      "type": "workshop",
+      "title": "ShadowSpec: Towards Zero Speculation Overhead for Substitute Speculative Decoding",
+      "authors": [
+        "Kuan-Cheng Lin",
+        "Pei-Shuo Wang",
+        "Jian-Jia Chen",
+        "Chun-Che Yang",
+        "Chi-Chih Chang",
+        "Brian J. Chan",
+        "Ning-Chi Huang",
+        "Mohamed S. Abdelfattah",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "AdaptFM: Resource-Adaptive Foundation Model Inference",
+      "themes": [
+        "llm"
+      ],
+      "links": []
+    },
+    {
+      "id": "systolic-sparse-fpga25",
       "year": 2025,
       "type": "conference",
-      "title": "edgebench: reproducible latency measurement across consumer devices",
-      "authors": ["Chia-Ling Wu", "Hsin-Yu Lai", "Wei-Chen Hsu", "Yen-Ting Lin"],
-      "venue": "MLSys 2025 — Conference on Machine Learning and Systems",
-      "themes": ["measure"],
-      "links": [
-        { "label": "PDF", "href": "https://example.org/papers/mlsys25-edgebench.pdf" },
-        { "label": { "zh": "程式碼", "en": "Code" }, "href": "https://github.com/example-lab" }
-      ]
+      "title": "Systolic Sparse Tensor Slices: FPGA Building Blocks for Sparse and Dense AI Acceleration",
+      "authors": [
+        "Endri Taka",
+        "Ning-Chi Huang",
+        "Chi-Chih Chang",
+        "Kai-Chiang Wu",
+        "Aman Arora",
+        "Diana Marculescu"
+      ],
+      "venue": "ACM/SIGDA International Symposium on Field-Programmable Gate Arrays (FPGA) 2025",
+      "themes": [
+        "accel"
+      ],
+      "links": []
     },
     {
-      "id": "micro25-reuse",
+      "id": "nas-remat-gecco25",
       "year": 2025,
       "type": "conference",
-      "title": "Cross-operator memory reuse for NPUs without a scratchpad allocator",
-      "authors": ["Wei-Chen Hsu", "Cheng-Hao Shih", "Yen-Ting Lin"],
-      "venue": "MICRO 2025 — 58th IEEE/ACM International Symposium on Microarchitecture",
-      "themes": ["compile"],
-      "links": [
-        { "label": "PDF", "href": "https://example.org/papers/micro25-reuse.pdf" },
-        { "label": "DOI", "href": "https://doi.org/10.0000/example.2025.3" }
-      ]
+      "title": "Integrating Neural Architecture Search and Rematerialization for Efficient On-Device Learning",
+      "authors": [
+        "Chih-Ling Chen",
+        "Kai-Chiang Wu",
+        "Ning-Chi Huang"
+      ],
+      "venue": "Genetic and Evolutionary Computation Conference (GECCO) 2025, 1226–1234",
+      "themes": [
+        "ondevice",
+        "compress"
+      ],
+      "links": []
     },
     {
-      "id": "tecs25-energy",
-      "year": 2025,
-      "type": "journal",
-      "title": "What on-device training costs: an energy model for federated updates",
-      "authors": ["Yu-Hsin Kuo", "Shih-Chi Huang", "Yen-Ting Lin"],
-      "venue": "ACM Transactions on Embedded Computing Systems, 24(3)",
-      "themes": ["privacy", "measure"],
-      "links": [
-        { "label": "DOI", "href": "https://doi.org/10.0000/example.2025.4" }
-      ]
+      "id": "elsa-cvprw24",
+      "year": 2024,
+      "type": "workshop",
+      "title": "ELSA: Exploiting Layer-wise N:M Sparsity for Vision Transformer Acceleration",
+      "authors": [
+        "Ning-Chi Huang",
+        "Chi-Chih Chang",
+        "Wei-Cheng Lin",
+        "Endri Taka",
+        "Diana Marculescu",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW) 2024",
+      "themes": [
+        "compress",
+        "accel"
+      ],
+      "links": []
     },
     {
-      "id": "iccad24-sparse",
+      "id": "flora-wacv24",
       "year": 2024,
       "type": "conference",
-      "title": "Sparsity that hardware can use: structured pruning under a bandwidth bound",
-      "authors": ["Shu-Fen Liao", "Kuan-Ting Yeh", "Yen-Ting Lin"],
-      "venue": "ICCAD 2024 — International Conference on Computer-Aided Design",
-      "themes": ["compile", "sched"],
-      "links": [
-        { "label": "PDF", "href": "https://example.org/papers/iccad24-sparse.pdf" }
-      ]
+      "title": "FLORA: Fine-grained Low-Rank Architecture Search for Vision Transformer",
+      "authors": [
+        "Chi-Chih Chang",
+        "Yuan-Yao Sung",
+        "Shixing Yu",
+        "Ning-Chi Huang",
+        "Diana Marculescu",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2024",
+      "themes": [
+        "compress"
+      ],
+      "links": []
     },
     {
-      "id": "emsoft24-sched",
+      "id": "vmeanba-2024",
       "year": 2024,
-      "type": "conference",
-      "title": "A scheduler that admits it does not know the workload",
-      "authors": ["Yi-Ting Chang", "Che-Wei Tang", "Yen-Ting Lin"],
-      "venue": "EMSOFT 2024 — International Conference on Embedded Software",
-      "themes": ["sched"],
-      "award": { "zh": "最佳論文提名", "en": "Best Paper nominee" },
+      "type": "preprint",
+      "title": "V\"Mean\"ba: Visual State Space Models only need 1 hidden dimension",
+      "authors": [
+        "Tien-Yu Chi",
+        "Hung-Yueh Chiang",
+        "Chi-Chih Chang",
+        "Ning-Chi Huang",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "arXiv preprint arXiv:2412.16602",
+      "themes": [
+        "compress"
+      ],
       "links": [
-        { "label": "PDF", "href": "https://example.org/papers/emsoft24-sched.pdf" },
-        { "label": "DOI", "href": "https://doi.org/10.0000/example.2024.5" }
+        {
+          "label": "arXiv",
+          "href": "https://arxiv.org/abs/2412.16602"
+        }
       ]
     },
     {
-      "id": "interspeech24-quant",
-      "year": 2024,
-      "type": "conference",
-      "title": "Where low-bit speech models lose their accuracy, layer by layer",
-      "authors": ["Po-Wei Chiu", "Pin-Hsuan Chen", "Yen-Ting Lin"],
-      "venue": "INTERSPEECH 2024",
-      "themes": ["compile"],
-      "links": [
-        { "label": "PDF", "href": "https://example.org/papers/interspeech24-quant.pdf" }
-      ]
-    },
-    {
-      "id": "ppopp23-pipeline",
+      "id": "decomposable-isqed23",
       "year": 2023,
       "type": "conference",
-      "title": "Pipelining inference across a phone's CPU, GPU and NPU",
-      "authors": ["Yi-Ting Chang", "Yen-Ting Lin"],
-      "venue": "PPoPP 2023 — Symposium on Principles and Practice of Parallel Programming",
-      "themes": ["sched"],
-      "links": [
-        { "label": "PDF", "href": "https://example.org/papers/ppopp23-pipeline.pdf" },
-        { "label": "DOI", "href": "https://doi.org/10.0000/example.2023.6" }
-      ]
+      "title": "Decomposable Architecture and Fault Mitigation Methodology for Deep Learning Accelerators",
+      "authors": [
+        "Ning-Chi Huang",
+        "Min-Syue Yang",
+        "Ya-Chu Chang",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "International Symposium on Quality Electronic Design (ISQED) 2023, 1–8",
+      "themes": [
+        "accel"
+      ],
+      "links": []
     },
     {
-      "id": "sensys23-privacy",
-      "year": 2023,
+      "id": "approx-systolic-vts21",
+      "year": 2021,
       "type": "conference",
-      "title": "The bandwidth price of keeping data on the device",
-      "authors": ["Shih-Chi Huang", "Yu-Hsin Kuo", "Yen-Ting Lin"],
-      "venue": "SenSys 2023 — ACM Conference on Embedded Networked Sensor Systems",
-      "themes": ["privacy"],
-      "links": [
-        { "label": "PDF", "href": "https://example.org/papers/sensys23-privacy.pdf" }
-      ]
+      "title": "An Energy-Efficient Approximate Systolic Array Based on Timing Error Prediction and Prevention",
+      "authors": [
+        "Ning-Chi Huang",
+        "Wei-Kai Tseng",
+        "Huan-Jan Chou",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "IEEE VLSI Test Symposium (VTS) 2021, 1–7",
+      "themes": [
+        "accel"
+      ],
+      "links": []
+    },
+    {
+      "id": "sensor-adder-date19",
+      "year": 2019,
+      "type": "conference",
+      "title": "Sensor-Based Approximate Adder Design for Accelerating Error-Tolerant and Deep-Learning Applications",
+      "authors": [
+        "Ning-Chi Huang",
+        "Szu-Ying Chen",
+        "Kai-Chiang Wu"
+      ],
+      "venue": "Design, Automation and Test in Europe (DATE) 2019, 692–697",
+      "themes": [
+        "accel"
+      ],
+      "links": []
+    },
+    {
+      "id": "decomposable-mac-systolic",
+      "status": "manuscript",
+      "type": "manuscript",
+      "title": "Efficient Systolic Array Based on Decomposable MAC for Quantized Deep Neural Networks",
+      "authors": [
+        "Ning-Chi Huang",
+        "Huan-Jan Chou",
+        "Kai-Chiang Wu"
+      ],
+      "themes": [
+        "accel"
+      ],
+      "links": []
     }
   ]
 }
