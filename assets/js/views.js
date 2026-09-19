@@ -407,6 +407,16 @@ export function peopleView(data, lang) {
   </section>`;
 }
 
+/** "碩士 2022–2024 · 博士 2024 年起" for someone on their second degree here. */
+function stageLine(person, lang) {
+  return list(person.stages).map((st) => {
+    const degree = t(st.degree, lang);
+    if (st.since && st.year) return `${degree} ${st.since}–${st.year}`;
+    if (st.since) return lang === "zh" ? `${degree} ${st.since} 年起` : `${degree} since ${st.since}`;
+    return degree;
+  }).filter(Boolean).join(" · ");
+}
+
 function personRow(m, lang, data) {
   const ui = UI[lang];
   const links = list(m.links).map((l) =>
@@ -414,7 +424,9 @@ function personRow(m, lang, data) {
   );
   if (m.email) links.unshift(`<a href="mailto:${escUrl(m.email)}">${esc(m.email)}</a>`);
 
-  const role = m.role ? t(m.role, lang) : (m.since ? ui.since(m.since) : "");
+  const role = list(m.stages).length
+    ? stageLine(m, lang)
+    : (m.role ? t(m.role, lang) : (m.since ? ui.since(m.since) : ""));
 
   return `
   <li class="person">

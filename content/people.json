@@ -13,7 +13,6 @@
             "zh": "林瑋晟",
             "en": "Wei-Cheng Lin"
           },
-          "since": 2024,
           "focus": [
             "Quantization",
             "KV-Cache Compression",
@@ -24,6 +23,23 @@
           "links": [],
           "aliases": [
             "WC Lin"
+          ],
+          "stages": [
+            {
+              "degree": {
+                "zh": "碩士",
+                "en": "MS"
+              },
+              "since": 2022,
+              "year": 2024
+            },
+            {
+              "degree": {
+                "zh": "博士",
+                "en": "PhD"
+              },
+              "since": 2024
+            }
           ]
         },
         {
@@ -828,27 +844,6 @@
       }
     },
     {
-      "name": {
-        "zh": "林瑋晟",
-        "en": "Wei-Cheng Lin"
-      },
-      "degree": {
-        "zh": "碩士",
-        "en": "MS"
-      },
-      "since": 2022,
-      "year": 2024,
-      "research": "KV-Cache Compression for Large Language Models, Semi-Structured Sparse Vision Transformer",
-      "focus": [
-        "Low-Rank Decomposition",
-        "Quantization",
-        "N:M Sparsity"
-      ],
-      "now": {
-        "org": "SiFive"
-      }
-    },
-    {
       "name": "李淑汶",
       "degree": {
         "zh": "碩士",
@@ -1007,7 +1002,9 @@
           "degree": {
             "zh": "博士後",
             "en": "Postdoc"
-          }
+          },
+          "since": 2021,
+          "year": 2026
         }
       ]
     },

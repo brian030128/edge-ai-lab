@@ -174,10 +174,19 @@ def main():
         restore(m, extras)
         (phd if clean(row.get("B")).lower() == "phd degree" else masters).append(m)
 
-    alumni = []
+    current_names = {m["name"] if isinstance(m["name"], str) else m["name"]["zh"]
+                     for m in phd + masters}
+
+    alumni, returning = [], []
     for row in read_rows(BOOK, 2):
         name = clean(row.get("A"))
         if not name:
+            continue
+        # Someone who finished a degree here and came back for another is a
+        # current member, not an alumnus. Record the earlier degree as a stage
+        # on their current entry instead.
+        if name in current_names:
+            returning.append(name)
             continue
         a = {"name": name}
         d = DEGREE.get(clean(row.get("C")).lower())
@@ -206,6 +215,8 @@ def main():
     OUT.write_text(json.dumps(people, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {OUT.relative_to(ROOT)} — {len(phd)} PhD, {len(masters)} master's, {len(alumni)} alumni.")
     print("Groups that are not in the spreadsheet must be re-added to people.json by hand.")
+    if returning:
+        print("Still in the lab, so left out of the alumni table: " + ", ".join(returning))
 
 
 if __name__ == "__main__":

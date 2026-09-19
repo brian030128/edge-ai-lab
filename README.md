@@ -119,6 +119,20 @@ so adding 大學部專題生 back is one entry whenever there is a 專題生 to 
 by hand has to be re-added after an import. Read `git diff` before committing
 an import for exactly this reason.
 
+Someone doing a second degree here takes `stages` in place of `since`, and the
+roster prints the progression instead of a single join year:
+
+```jsonc
+"stages": [
+  { "degree": { "zh": "碩士", "en": "MS" },  "since": 2022, "year": 2024 },
+  { "degree": { "zh": "博士", "en": "PhD" }, "since": 2024 }
+]
+```
+
+A stage with no `year` is the one they are in now — it reads 博士 2024 年起 /
+PhD since 2024. Someone still in the lab belongs here and not in the alumni
+table, however many degrees they have finished.
+
 Aliases matter because publication lists print initials. Giving 陳建嘉 the alias
 "JJ Chen" is what sets that name in bold in the publications section. An alias
 belongs to one person; the validator rejects two people claiming the same one.
@@ -256,6 +270,11 @@ python scripts/import-roster.py
 npm run check
 git diff content/people.json     # read this before committing
 ```
+
+A name that appears in both sheets is treated as a current member and left out
+of the alumni table — someone who finished a master's here and came back for a
+doctorate has not left. The importer prints those names so the decision is
+visible; record the earlier degree as a stage on their current entry.
 
 The importer rewrites `people.json` from the two sheets and preserves what the
 spreadsheet does not carry: English names, author aliases, `stages`, and a job

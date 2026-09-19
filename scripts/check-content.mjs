@@ -153,6 +153,13 @@ if (people) {
       else ids.add(m.id);
       checkLocalised(f, `${at}.name`, m.name);
       checkLocalised(f, `${at}.role`, m.role, { required: false });
+      arr(m.stages).forEach((st, si) => {
+        checkLocalised(f, `${at}.stages[${si}].degree`, st.degree);
+        for (const key of ["since", "year"]) {
+          if (st[key] == null || st[key] === "") continue;
+          if (!/^\d{4}$/.test(String(st[key]))) fail(f, `${at}.stages[${si}].${key}`, "must be a four-digit year");
+        }
+      });
       if (!arr(m.focus).length) warn(f, `${at}.focus`, "no specialisation listed");
       arr(m.focus).forEach((x, i) => checkLocalised(f, `${at}.focus[${i}]`, x));
       checkLocalised(f, `${at}.work`, m.work, { required: false });
