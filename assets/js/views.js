@@ -15,8 +15,6 @@ export const UI = {
     join: "聯絡與加入",
     papers: "看論文",
     joinUs: "加入我們",
-    current: "在學",
-    past: "畢業",
     people_n: (n) => `${n} 位`,
     papers_n: (n) => `${n} 篇`,
     all: "全部",
@@ -55,8 +53,6 @@ export const UI = {
     join: "Contact and openings",
     papers: "Read the papers",
     joinUs: "Join the lab",
-    current: "Current",
-    past: "Graduated",
     people_n: (n) => `${n} ${n === 1 ? "person" : "people"}`,
     papers_n: (n) => `${n} ${n === 1 ? "paper" : "papers"}`,
     all: "All",
@@ -144,10 +140,6 @@ export function heroView(data, lang) {
 
     <div class="cohort">
       <div class="cohort__rows">${strip}</div>
-      <p class="cohort__key">
-        <span><i></i>${esc(ui.current)}</span>
-        <span><i class="is-past"></i>${esc(ui.past)}</span>
-      </p>
     </div>
   </section>`;
 }

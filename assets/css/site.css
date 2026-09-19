@@ -426,18 +426,6 @@ main:focus, main:focus-visible { outline: none; }
   .tick { animation: none; opacity: 1; transform: none; }
 }
 
-.cohort__key {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem 1.5rem;
-  margin-top: 1.1rem;
-  font-size: var(--step--2);
-  color: var(--ink-2);
-}
-.cohort__key span { display: flex; align-items: center; gap: .45rem; }
-.cohort__key i { width: 9px; height: 9px; border: 1.5px solid var(--ink); background: var(--ink); }
-.cohort__key i.is-past { background: none; border-color: var(--ink-2); }
-
 /* ------------------------------------------------------------------ PI --- */
 
 .pi { display: grid; gap: clamp(1.6rem, 4vw, 3.2rem); grid-template-columns: 1fr; align-items: start; }
